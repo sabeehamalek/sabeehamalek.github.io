@@ -1,0 +1,246 @@
+/* ------------------------------
+   Basic page settings
+--------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behaviour: smooth;
+}
+
+body {
+    margin: 0;
+    background: #ffffff;
+    color: #111111;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+
+/* ------------------------------
+   Navigation bar
+--------------------------------- */
+
+.site-header {
+    border-bottom: 1px solid #e5e5e5;
+    background: #ffffff;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 22px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.site-name {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #111111;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #111111;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #c21875;
+}
+
+
+/* ------------------------------
+   Banner
+--------------------------------- */
+
+.banner {
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+/* ------------------------------
+   Main content
+--------------------------------- */
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 30px 80px;
+
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 70px;
+}
+
+
+/* ------------------------------
+   Left profile column
+--------------------------------- */
+
+.profile-column {
+    text-align: center;
+}
+
+.profile-image {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.profile-name {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.profile-title {
+    margin: 5px 0 25px;
+    color: #555555;
+    font-size: 1rem;
+}
+
+.social-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.social-links li {
+    margin: 8px 0;
+}
+
+.social-links a {
+    color: #c21875;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* ------------------------------
+   About section
+--------------------------------- */
+
+.about-section h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.about-section p {
+    margin: 0 0 22px;
+    max-width: 760px;
+}
+
+.about-link {
+    display: inline-block;
+    margin: 5px 0 30px;
+    color: #c21875;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.about-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ------------------------------
+   Publications link
+--------------------------------- */
+
+.publications-link {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 11px 20px;
+
+    border: 1px solid #c21875;
+    color: #c21875;
+    text-decoration: none;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.publications-link:hover {
+    background: #c21875;
+    color: #ffffff;
+}
+
+
+/* ------------------------------
+   Mobile layout
+--------------------------------- */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 15px 20px;
+    }
+
+    .banner {
+        height: 260px;
+    }
+
+    .main-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding: 45px 20px 60px;
+    }
+
+    .profile-column {
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 160px;
+        height: 160px;
+    }
+
+    .about-section h1 {
+        font-size: 1.7rem;
+    }
+}
