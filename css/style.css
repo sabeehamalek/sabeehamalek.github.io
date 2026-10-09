@@ -309,7 +309,7 @@ body {
 
        /* Larger profile image on widescreen displays */
     .profile-image {
-        width: 240px;
-        height: 240px;
+        width: 300px;
+        height: 300px;
     }
 }
