@@ -268,3 +268,25 @@ body {
     }
 
 }
+
+/* =========================================
+   WIDER DESKTOP SCREENS
+========================================= */
+
+@media (min-width: 1500px) {
+
+    /* Allow the navigation bar to use the full width */
+    .navbar {
+        max-width: none;
+        padding-left: clamp(30px, 2vw, 48px);
+        padding-right: clamp(30px, 2vw, 48px);
+    }
+
+    /* Allow the two-column section to use the full width */
+    .main-container {
+        max-width: none;
+        padding-left: clamp(30px, 2vw, 48px);
+        padding-right: clamp(30px, 2vw, 48px);
+    }
+
+}
