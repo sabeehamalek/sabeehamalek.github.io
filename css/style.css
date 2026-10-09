@@ -175,7 +175,7 @@ a:focus-visible {
 .profile-image {
     display: block;
 
-    width: clamp(160px, 65%, 320px);
+    width: clamp(136px, 55%, 272px);
     height: auto;
     aspect-ratio: 1 / 1;
 
@@ -235,7 +235,7 @@ a:focus-visible {
 .about-section h1 {
     margin: 0 0 25px;
 
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 600;
     line-height: 1.3;
 }
