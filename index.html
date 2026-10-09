@@ -75,16 +75,25 @@
     </header>
 
 
-    <!-- Banner image -->
+<section class="banner">
 
-    <section class="banner" aria-label="Research banner">
+    <picture>
 
+        <!-- Use the mobile banner on screens up to 800px wide -->
+        <source
+            media="(max-width: 800px)"
+            srcset="images/banner-mobile.jpg"
+        >
+
+        <!-- Use the desktop banner by default -->
         <img
             src="images/banner.jpg"
             alt="Microscopy images from biomedical research"
         >
 
-    </section>
+    </picture>
+
+</section>
 
 
     <!-- Main content: profile column and About section -->
