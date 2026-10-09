@@ -72,7 +72,7 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #591a9c;
+    color: #8709a4;
 }
 
 /* Make Home bold when it is the active page */
@@ -163,7 +163,7 @@ body {
 }
 
 .social-links a {
-    color: #591a9c;
+    color: #8709a4;
     text-decoration: none;
     font-size: 0.95rem;
 }
@@ -202,7 +202,7 @@ body {
 .about-link {
     display: inline-block;
     margin: 5px 0 30px;
-    color: #591a9c;
+    color: #8709a4;
     font-weight: 600;
     text-decoration: none;
 }
@@ -219,7 +219,7 @@ body {
 .publications-link {
     display: inline-block;
     margin-top: 5px;
-    color: #591a9c;
+    color: #8709a4;
     font-size: 0.95rem;
     font-weight: 600;
     text-decoration: none;
