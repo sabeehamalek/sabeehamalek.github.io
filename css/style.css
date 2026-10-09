@@ -7,7 +7,7 @@
 }
 
 html {
-    scroll-behaviour: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -72,10 +72,18 @@ body {
    Banner
 --------------------------------- */
 
+/* Desktop banner */
+
 .banner {
     width: 100%;
     height: 360px;
     overflow: hidden;
+}
+
+.banner picture {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .banner img {
@@ -97,7 +105,7 @@ body {
     padding: 60px 30px 80px;
 
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 280px minmax(0, 1fr);
     gap: 70px;
 }
 
@@ -130,6 +138,11 @@ body {
     color: #555555;
     font-size: 1rem;
 }
+
+
+/* ------------------------------
+   Social links
+--------------------------------- */
 
 .social-links {
     list-style: none;
@@ -168,6 +181,11 @@ body {
     max-width: 760px;
 }
 
+
+/* ------------------------------
+   About link
+--------------------------------- */
+
 .about-link {
     display: inline-block;
     margin: 5px 0 30px;
@@ -200,10 +218,12 @@ body {
 
 
 /* ------------------------------
-   Mobile layout
+   Mobile and tablet layout
 --------------------------------- */
 
 @media (max-width: 800px) {
+
+    /* Navigation */
 
     .navbar {
         flex-direction: column;
@@ -216,12 +236,36 @@ body {
         gap: 15px 20px;
     }
 
+
+    /* Mobile banner */
+
+    /*
+       The mobile image keeps its natural aspect ratio.
+       Its height adjusts automatically to the screen width,
+       so the complete image remains visible without cropping.
+    */
+
     .banner {
-        height: 260px;
+        height: auto;
     }
 
+    .banner picture {
+        width: 100%;
+        height: auto;
+    }
+
+    .banner img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+    }
+
+
+    /* Main content stacks into one column */
+
     .main-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 45px;
         padding: 45px 20px 60px;
     }
@@ -232,10 +276,3 @@ body {
 
     .profile-image {
         width: 160px;
-        height: 160px;
-    }
-
-    .about-section h1 {
-        font-size: 1.7rem;
-    }
-}
