@@ -69,10 +69,8 @@ body {
 
 
 /* ------------------------------
-   Banner
+   Desktop banner
 --------------------------------- */
-
-/* Desktop banner */
 
 .banner {
     width: 100%;
@@ -87,13 +85,43 @@ body {
 }
 
 .banner img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    display: block;
 }
 
+
+/* ------------------------------
+   Mobile banner
+--------------------------------- */
+
+@media (max-width: 800px) {
+
+    .banner {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+    }
+
+    .banner picture {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .banner picture img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+        object-position: center;
+    }
+
+}
 
 /* ------------------------------
    Main content
