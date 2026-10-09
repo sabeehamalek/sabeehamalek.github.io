@@ -1,234 +1,88 @@
-<!DOCTYPE html>
-<html lang="en-GB">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Academic website of Sabeeha Malek, PhD, biomedical researcher specialising in Ehlers–Danlos syndromes, Hypermobility Spectrum Disorders and cellular mechanobiology."
-    >
-
-    <title>Sabeeha Malek, PhD | Biomedical Researcher</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
-</head>
-
-
-<body>
-
-    <!-- Navigation bar -->
-
-    <header class="site-header">
-
-        <nav class="navbar">
-
-            <a href="index.html" class="site-name">
-                Sabeeha Malek, PhD
-            </a>
-
-            <ul class="nav-links">
-
-                <li>
-                    <a href="index.html" class="active">Home</a>
-                </li>
-
-                <li>
-                    <a href="about.html">About me</a>
-                </li>
-
-                <li>
-                    <a href="publications.html">Publications</a>
-                </li>
-
-                <li>
-                    <a href="press.html">Press &amp; Media</a>
-                </li>
-
-                <li>
-                    <a href="resources.html">Resources</a>
-                </li>
-
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-    </header>
-
-
-    <!-- Banner image -->
-
-    <section class="banner">
-
-        <img
-            src="images/banner.jpg"
-            alt="Microscope images from biomedical research"
-        >
-
-    </section>
-
-
-    <!-- Main content -->
-
-    <main class="main-container">
-
-
-        <!-- Left column -->
-
-        <aside class="profile-column">
-
-            <img
-                src="images/profile.jpg"
-                alt="Portrait of Sabeeha Malek"
-                class="profile-image"
-            >
-
-            <h2 class="profile-name">
-                Sabeeha Malek, PhD
-            </h2>
-
-            <p class="profile-title">
-                Biomedical Researcher
-            </p>
-
-
-            <ul class="social-links">
-
-                <li>
-                    <a
-                        href="https://uk.linkedin.com/in/sabeehamalek"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        LinkedIn
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="https://orcid.org/0000-0002-6130-541X"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        ORCID
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="https://scholar.google.com/citations?user=3GFm5_kAAAAJ&hl=en"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Google Scholar
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="https://www.researchgate.net/profile/Sabeeha-Malek-2"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        ResearchGate
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="https://x.com/SabeehaMalek"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Twitter / X
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="https://bsky.app/profile/sabeehamalek.bsky.social"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Bluesky
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="https://www.instagram.com/sabeehamalek/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Instagram
-                    </a>
-                </li>
-
-            </ul>
-
-        </aside>
-
-
-        <!-- Right column -->
-
-        <section class="about-section">
-
-            <h1>About me</h1>
-
-
-            <p>
-                I am a biomedical researcher specialising in Ehlers-Danlos
-                syndromes (EDS) and Hypermobility Spectrum Disorders (HSD).
-                My research investigates how interactions between cells and
-                the surrounding extracellular matrix influence
-                connective tissue function in EDS/HSD, with a particular
-                focus on cell adhesion and cellular mechanobiology. I
-                combine cell biology, mechanobiology and biophysical
-                approaches to investigate the mechanisms underlying
-                connective tissue dysfunction.
-            </p>
-
-
-            <p>
-                My work has established a new mechanobiological research
-                direction in EDS/HSD, proposing a stepwise pathomechanism
-                linking altered cell-matrix interactions and fibroblast
-                mechanics to connective tissue dysfunction.
-            </p>
-
-
-            <a href="about.html" class="about-link">
-                Read more about my research →
-            </a>
-
-
-            <p>
-                Following completion of my PhD and subsequent postdoctoral
-                research at the University of Warwick, I am continuing to
-                develop my research programme independently. I am currently
-                preparing my experimental findings for publication and
-                developing plans for the next stage of my research.
-            </p>
-
-
-            <a href="publications.html" class="publications-link">
-                View my publications →
-            </a>
-
-        </section>
-
-
-    </main>
-
-
-</body>
-
-</html>
+/* ------------------------------
+   Banner
+--------------------------------- */
+
+.banner {
+    width: 100%;
+    background: #000000;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* ------------------------------
+   Profile image
+--------------------------------- */
+
+.profile-image {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 0;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+
+/* ------------------------------
+   Social links
+--------------------------------- */
+
+.social-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.social-links li {
+    margin: 8px 0;
+}
+
+.social-links a {
+    color: #D900A9;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* ------------------------------
+   About links
+--------------------------------- */
+
+.about-link {
+    display: inline-block;
+    margin: 5px 0 30px;
+    color: #D900A9;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.about-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ------------------------------
+   Publications link
+--------------------------------- */
+
+.publications-link {
+    display: inline-block;
+    margin-top: 5px;
+    color: #D900A9;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.publications-link:hover {
+    text-decoration: underline;
+}
