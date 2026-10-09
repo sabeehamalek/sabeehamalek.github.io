@@ -1,31 +1,41 @@
-/* ------------------------------
-   Basic page settings
---------------------------------- */
+
+/* =========================================
+   GLOBAL SETTINGS
+========================================= */
+
+:root {
+    --accent: #D900A9;
+    --text: #111111;
+    --muted-text: #555555;
+    --border: #E5E5E5;
+    --background: #FFFFFF;
+    --banner-background: #000000;
+}
 
 * {
     box-sizing: border-box;
 }
 
 html {
-    scroll-behaviour: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    background: #ffffff;
-    color: #111111;
+    background: var(--background);
+    color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
 }
 
 
-/* ------------------------------
-   Navigation bar
---------------------------------- */
+/* =========================================
+   NAVIGATION BAR
+========================================= */
 
 .site-header {
-    border-bottom: 1px solid #e5e5e5;
-    background: #ffffff;
+    background: var(--background);
+    border-bottom: 1px solid var(--border);
 }
 
 .navbar {
@@ -40,9 +50,9 @@ body {
 }
 
 .site-name {
+    color: var(--text);
     font-size: 1.15rem;
     font-weight: 600;
-    color: #111111;
     text-decoration: none;
     white-space: nowrap;
 }
@@ -50,46 +60,69 @@ body {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 28px;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 .nav-links a {
-    color: #111111;
-    text-decoration: none;
+    color: var(--text);
     font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #c21875;
+    color: var(--accent);
 }
 
 
-/* ------------------------------
-   Banner
---------------------------------- */
+/* Keyboard accessibility */
+
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   BANNER IMAGE
+========================================= */
+
+/*
+   Desktop height: 252 px (30% less than 360 px).
+   The black background fills the unused space.
+   "contain" prevents the image from being cropped.
+*/
 
 .banner {
     width: 100%;
-    height: 360px;
+    height: 252px;
+    background: var(--banner-background);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     overflow: hidden;
 }
 
 .banner img {
+    display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
-    display: block;
 }
 
 
-/* ------------------------------
-   Main content
---------------------------------- */
+/* =========================================
+   MAIN TWO-COLUMN LAYOUT
+========================================= */
 
 .main-container {
     max-width: 1200px;
@@ -97,25 +130,26 @@ body {
     padding: 60px 30px 80px;
 
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 280px minmax(0, 1fr);
     gap: 70px;
+    align-items: start;
 }
 
 
-/* ------------------------------
-   Left profile column
---------------------------------- */
+/* =========================================
+   LEFT COLUMN: PROFILE
+========================================= */
 
 .profile-column {
     text-align: center;
 }
 
 .profile-image {
+    display: block;
     width: 190px;
     height: 190px;
     object-fit: cover;
-    border-radius: 50%;
-    display: block;
+    border-radius: 0;
     margin: 0 auto 25px;
 }
 
@@ -123,13 +157,19 @@ body {
     margin: 0;
     font-size: 1.25rem;
     font-weight: 600;
+    line-height: 1.4;
 }
 
 .profile-title {
-    margin: 5px 0 25px;
-    color: #555555;
+    margin: 7px 0 25px;
+    color: var(--muted-text);
     font-size: 1rem;
 }
+
+
+/* =========================================
+   SOCIAL AND ACADEMIC LINKS
+========================================= */
 
 .social-links {
     list-style: none;
@@ -142,9 +182,10 @@ body {
 }
 
 .social-links a {
-    color: #c21875;
-    text-decoration: none;
+    color: var(--accent);
     font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .social-links a:hover {
@@ -152,81 +193,102 @@ body {
 }
 
 
-/* ------------------------------
-   About section
---------------------------------- */
+/* =========================================
+   RIGHT COLUMN: ABOUT ME
+========================================= */
+
+.about-section {
+    min-width: 0;
+}
 
 .about-section h1 {
-    margin-top: 0;
-    margin-bottom: 25px;
+    margin: 0 0 25px;
     font-size: 2rem;
     font-weight: 600;
+    line-height: 1.3;
 }
 
 .about-section p {
-    margin: 0 0 22px;
     max-width: 760px;
+    margin: 0 0 22px;
+}
+
+
+/* =========================================
+   TEXT LINKS
+========================================= */
+
+/*
+   Both links share the same appearance:
+   no box, no border and no button background.
+*/
+
+.about-link,
+.publications-link {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .about-link {
-    display: inline-block;
     margin: 5px 0 30px;
-    color: #c21875;
-    font-weight: 600;
-    text-decoration: none;
 }
 
-.about-link:hover {
+.publications-link {
+    margin: 5px 0 0;
+}
+
+.about-link:hover,
+.publications-link:hover {
     text-decoration: underline;
 }
 
 
-/* ------------------------------
-   Publications link
---------------------------------- */
-
-.publications-link {
-    display: inline-block;
-    margin-top: 5px;
-    padding: 11px 20px;
-
-    border: 1px solid #c21875;
-    color: #c21875;
-    text-decoration: none;
-
-    font-size: 0.95rem;
-    font-weight: 600;
-}
-
-.publications-link:hover {
-    background: #c21875;
-    color: #ffffff;
-}
-
-
-/* ------------------------------
-   Mobile layout
---------------------------------- */
+/* =========================================
+   TABLETS AND MOBILE DEVICES
+========================================= */
 
 @media (max-width: 800px) {
+
+    /* Navigation */
 
     .navbar {
         flex-direction: column;
         align-items: flex-start;
+        gap: 15px;
         padding: 20px;
     }
 
     .nav-links {
-        flex-wrap: wrap;
-        gap: 15px 20px;
+        gap: 10px 18px;
     }
+
+
+    /* Banner */
 
     .banner {
-        height: 260px;
+        height: 180px;
     }
 
+    /*
+       Keep the whole banner image visible on mobile.
+       Black space may appear above and below the image.
+    */
+
+    .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+
+    /* Stack the profile above the About section */
+
     .main-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 45px;
         padding: 45px 20px 60px;
     }
@@ -242,5 +304,37 @@ body {
 
     .about-section h1 {
         font-size: 1.7rem;
+        margin-bottom: 20px;
     }
+
+    .about-section p {
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 400px) {
+
+    .nav-links {
+        gap: 8px 14px;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .banner {
+        height: 150px;
+    }
+
+    .main-container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
 }
