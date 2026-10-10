@@ -214,6 +214,7 @@ a:focus-visible {
 .social-links a {
     color: #b200ff;
     font-size: 0.95rem;
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -254,7 +255,7 @@ a:focus-visible {
 
     color: #b200ff;
     font-size: 1.0rem;
-    font-weight: 600;
+    font-weight: 605;
     text-decoration: none;
 }
 
@@ -275,7 +276,7 @@ a:focus-visible {
 
     color: #b200ff;
     font-size: 1.0rem;
-    font-weight: 600;
+    font-weight: 605;
     text-decoration: none;
 }
 
