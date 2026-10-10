@@ -253,8 +253,8 @@ a:focus-visible {
     margin: 5px 0 30px;
 
     color: #b200ff;
-    font-size: 1.05rem;
-    font-weight: 610;
+    font-size: 1.0rem;
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -274,8 +274,8 @@ a:focus-visible {
     margin-top: 5px;
 
     color: #b200ff;
-    font-size: 1.05rem;
-    font-weight: 610;
+    font-size: 1.0rem;
+    font-weight: 600;
     text-decoration: none;
 }
 
