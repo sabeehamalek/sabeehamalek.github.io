@@ -57,7 +57,7 @@ body {
 .site-name {
     color: #111111;
     font-size: 1.3rem;
-    font-weight: 750;
+    font-weight: 700;
     text-decoration: none;
     white-space: nowrap;
 }
@@ -253,7 +253,7 @@ a:focus-visible {
     margin: 5px 0 30px;
 
     color: #b200ff;
-    font-weight: 650;
+    font-weight: 630;
     text-decoration: none;
 }
 
@@ -273,8 +273,8 @@ a:focus-visible {
     margin-top: 5px;
 
     color: #b200ff;
-    font-size: 0.95rem;
-    font-weight: 650;
+    font-size: 1.0rem;
+    font-weight: 630;
     text-decoration: none;
 }
 
