@@ -82,7 +82,7 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #cc008c;
+    color: #cb00ff;
 }
 
 /* Keep Home bold on the homepage. */
@@ -95,7 +95,7 @@ body {
 /* Keyboard accessibility */
 
 a:focus-visible {
-    outline: 2px solid #cc008c;
+    outline: 2px solid #cb00ff;
     outline-offset: 4px;
 }
 
@@ -212,7 +212,7 @@ a:focus-visible {
 }
 
 .social-links a {
-    color: #cc008c;
+    color: #cb00ff;
     font-size: 0.95rem;
     font-weight: 450;
     text-decoration: none;
@@ -253,7 +253,7 @@ a:focus-visible {
     display: inline-block;
     margin: 5px 0 30px;
 
-    color: #cc008c;
+    color: #cb00ff;
     font-size: 1.0rem;
     font-weight: 600;
     text-decoration: none;
@@ -274,7 +274,7 @@ a:focus-visible {
     display: inline-block;
     margin-top: 5px;
 
-    color: #cc008c;
+    color: #cb00ff;
     font-size: 1.0rem;
     font-weight: 600;
     text-decoration: none;
