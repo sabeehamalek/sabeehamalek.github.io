@@ -201,6 +201,10 @@ a:focus-visible {
    6. SOCIAL AND ACADEMIC LINKS
 ========================================= */
 
+/* =========================================
+   SOCIAL AND ACADEMIC LINKS
+========================================= */
+
 .social-links {
     list-style: none;
     margin: 0;
@@ -212,6 +216,11 @@ a:focus-visible {
 }
 
 .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 9px;
+
     color: #ea0074;
     font-size: 0.95rem;
     font-weight: 450;
@@ -220,6 +229,16 @@ a:focus-visible {
 
 .social-links a:hover {
     text-decoration: underline;
+}
+
+/* Social media icons */
+
+.social-icon {
+    display: block;
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 
