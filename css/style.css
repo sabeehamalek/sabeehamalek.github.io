@@ -207,8 +207,10 @@ a:focus-visible {
 
 .social-links {
     list-style: none;
-    margin: 0;
+    width: fit-content;
+    margin: 0 auto;
     padding: 0;
+    text-align: left;
 }
 
 .social-links li {
@@ -235,8 +237,8 @@ a:focus-visible {
 
 .social-icon {
     display: block;
-    width: 22px;
-    height: 22px;
+    width: 26px;
+    height: 26px;
     object-fit: contain;
     flex-shrink: 0;
 }
