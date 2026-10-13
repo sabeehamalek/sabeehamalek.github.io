@@ -218,16 +218,12 @@ a:focus-visible {
    6. SOCIAL AND ACADEMIC LINKS
 ========================================= */
 
-/* =========================================
-   SOCIAL AND ACADEMIC LINKS
-========================================= */
-
 .social-links {
     list-style: none;
     width: fit-content;
     margin: 0 auto;
     padding: 0;
-    text-align: center;
+    text-align: left;
 }
 
 .social-links li {
@@ -246,19 +242,15 @@ a:focus-visible {
     text-decoration: none;
 }
 
-.social-links a:hover {
-    text-decoration: underline;
+.social-links a:hover span {
+    text-decoration-thickness: 2px;
 }
 
-/* Underline social media link labels */
+/* Underline link labels */
 
 .social-links a span {
     text-decoration: underline;
     text-underline-offset: 3px;
-}
-
-.social-links a:hover span {
-    text-decoration-thickness: 2px;
 }
 
 /* Social media icons */
