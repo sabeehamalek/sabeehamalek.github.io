@@ -1,10 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="en-GB">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
@@ -17,27 +16,23 @@
     <!-- Website favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    
+
     <!-- Load Source Sans 3 from Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
->
-
-<!-- Your website stylesheet -->
-<link rel="stylesheet" href="css/style.css">
-
+    <!-- Website stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <!-- Navigation bar -->
-
     <header class="site-header">
-
         <nav class="navbar" aria-label="Main navigation">
 
             <a href="index.html" class="site-name">
@@ -45,158 +40,128 @@
             </a>
 
             <ul class="nav-links">
-
                 <li>
-                    <a
-                        href="index.html"
-                        class="active"
-                        aria-current="page"
-                    >
-                        Home
-                    </a>
+                    <a href="index.html" class="active" aria-current="page">Home</a>
                 </li>
-
                 <li>
                     <a href="about.html">About me</a>
                 </li>
-
                 <li>
                     <a href="publications.html">Publications</a>
                 </li>
-
                 <li>
                     <a href="press.html">Press &amp; Media</a>
                 </li>
-
                 <li>
                     <a href="resources.html">Resources</a>
                 </li>
-
                 <li>
                     <a href="contact.html">Contact</a>
                 </li>
-
             </ul>
 
         </nav>
-
     </header>
 
-
     <!-- Full-width banner -->
-
     <section class="banner">
-
         <img
             src="images/banner.jpg"
             alt="Microscopy images from biomedical research"
         >
-
     </section>
 
-
     <!-- Main content -->
-
     <main class="main-container">
 
+        <!-- Left column: profile and social links -->
+        <aside class="profile-column">
 
-       <!-- Left column: profile and social links -->
+            <img
+                src="images/profile.jpg"
+                alt="Portrait of Sabeeha Malek"
+                class="profile-image"
+            >
 
-<aside class="profile-column">
+            <div class="profile-details">
 
-    <img
-        src="images/profile.jpg"
-        alt="Portrait of Sabeeha Malek"
-        class="profile-image"
-    >
+                <h2 class="profile-name">Sabeeha Malek, PhD</h2>
 
-    <div class="profile-details">
+                <p class="profile-title">Biomedical Researcher</p>
 
-        <h2 class="profile-name">
-            Sabeeha Malek, PhD
-        </h2>
+                <ul class="social-links">
 
-        <p class="profile-title">
-            Biomedical Researcher
-        </p>
+                    <li>
+                        <a href="https://orcid.org/0000-0002-6130-541X"
+                           target="_blank" rel="noopener noreferrer">
+                            <img src="images/icons/orcid.svg"
+                                 class="social-icon" alt="">
+                            <span>ORCID iD</span>
+                        </a>
+                    </li>
 
-        <ul class="social-links">
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=3GFm5_kAAAAJ&amp;hl=en"
+                           target="_blank" rel="noopener noreferrer">
+                            <img src="images/icons/google-scholar.svg"
+                                 class="social-icon" alt="">
+                            <span>Google Scholar</span>
+                        </a>
+                    </li>
 
-            <li>
-                <a href="https://orcid.org/0000-0002-6130-541X"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="images/icons/orcid.svg"
-                         class="social-icon" alt="">
-                    <span>ORCID iD<span>
-                </a>
-            </li>
+                    <li>
+                        <a href="https://www.researchgate.net/profile/Sabeeha-Malek-2"
+                           target="_blank" rel="noopener noreferrer">
+                            <img src="images/icons/researchgate.svg"
+                                 class="social-icon" alt="">
+                            <span>ResearchGate</span>
+                        </a>
+                    </li>
 
-            <li>
-                <a href="https://scholar.google.com/citations?user=3GFm5_kAAAAJ&amp;hl=en"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="images/icons/google-scholar.svg"
-                         class="social-icon" alt="">
-                    <span>Google Scholar<span>
-                </a>
-            </li>
+                    <li>
+                        <a href="https://uk.linkedin.com/in/sabeehamalek"
+                           target="_blank" rel="noopener noreferrer">
+                            <img src="images/icons/linkedin.svg"
+                                 class="social-icon" alt="">
+                            <span>LinkedIn</span>
+                        </a>
+                    </li>
 
-            <li>
-                <a href="https://www.researchgate.net/profile/Sabeeha-Malek-2"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="images/icons/researchgate.svg"
-                         class="social-icon" alt="">
-                    <span>ResearchGate<span>
-                </a>
-            </li>
+                    <li>
+                        <a href="https://bsky.app/profile/sabeehamalek.bsky.social"
+                           target="_blank" rel="noopener noreferrer">
+                            <img src="images/icons/bluesky.svg"
+                                 class="social-icon" alt="">
+                            <span>Bluesky</span>
+                        </a>
+                    </li>
 
-            <li>
-                <a href="https://uk.linkedin.com/in/sabeehamalek"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="images/icons/linkedin.svg"
-                         class="social-icon" alt="">
-                    <span>LinkedIn<span>
-                </a>
-            </li>
+                    <li>
+                        <a href="https://www.instagram.com/sabeehamalek/"
+                           target="_blank" rel="noopener noreferrer">
+                            <img src="images/icons/instagram.svg"
+                                 class="social-icon" alt="">
+                            <span>Instagram</span>
+                        </a>
+                    </li>
 
-            <li>
-                <a href="https://bsky.app/profile/sabeehamalek.bsky.social"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="images/icons/bluesky.svg"
-                         class="social-icon" alt="">
-                    <span>Bluesky<span>
-                </a>
-            </li>
+                    <li>
+                        <a href="https://x.com/SabeehaMalek"
+                           target="_blank" rel="noopener noreferrer">
+                            <img src="images/icons/x.svg"
+                                 class="social-icon" alt="">
+                            <span>Twitter / X</span>
+                        </a>
+                    </li>
 
-            <li>
-                <a href="https://www.instagram.com/sabeehamalek/"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="images/icons/instagram.svg"
-                         class="social-icon" alt="">
-                    <span>Instagram<span>
-                </a>
-            </li>
+                </ul>
+            </div>
+        </aside>
 
-            <li>
-                <a href="https://x.com/SabeehaMalek"
-                   target="_blank" rel="noopener noreferrer">
-                    <img src="images/icons/x.svg"
-                         class="social-icon" alt="">
-                    <span>Twitter / X<span>
-                </a>
-            </li>
+        <!-- Right column: homepage research overview -->
+        <section class="overview-section">
 
-        </ul>
-
-    </div>
-
-</aside>
-
-
-        <!-- Right column: About me -->
-
-        <section class="about-section">
-
-            <h1>About me</h1>
+            <h1>Research overview</h1>
 
             <p>
                 I am a biomedical researcher specialising in Ehlers-Danlos
@@ -217,7 +182,7 @@
                 mechanics to connective tissue dysfunction.
             </p>
 
-            <a href="about.html" class="about-link">
+            <a href="about.html" class="overview-link">
                 Read more about my research →
             </a>
 
@@ -237,14 +202,13 @@
 
     </main>
 
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <p>&copy; 2026 Sabeeha Malek</p>
+        </div>
+    </footer>
+
 </body>
-
 </html>
-
-<!-- Footer -->
-
-<footer class="site-footer">
-    <div class="site-footer-inner">
-        <p>&copy; 2026 Sabeeha Malek</p>
-    </div>
-</footer>
+```
