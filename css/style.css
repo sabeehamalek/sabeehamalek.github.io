@@ -1,3 +1,4 @@
+
 /* =========================================
    1. BASIC PAGE SETTINGS
 ========================================= */
@@ -9,8 +10,7 @@
 html {
     scroll-behavior: smooth;
 
-    /* Increase responsive font sizes by approximately 15% */
-
+    /* Responsive font sizing */
     font-size: clamp(
         1.22rem,
         calc(0.8625rem + 0.575vw),
@@ -31,8 +31,6 @@ body {
    2. NAVIGATION BAR
 ========================================= */
 
-/* The navigation always spans the available page width. */
-
 .site-header {
     width: 100%;
     margin: 0;
@@ -44,17 +42,15 @@ body {
     width: 100%;
     max-width: none;
     margin: 0;
-
     padding: 22px clamp(20px, 2.5vw, 48px);
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     gap: clamp(18px, 2vw, 40px);
 
-   min-height: clamp(88px, 6vw, 110px);
-   background: #f0f0f0;
+    min-height: clamp(88px, 6vw, 110px);
+    background: #f0f0f0;
 }
 
 .site-name {
@@ -73,7 +69,6 @@ body {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-
     gap: 12px clamp(10px, 1.25vw, 24px);
 
     list-style: none;
@@ -92,8 +87,6 @@ body {
     color: #ea0074;
 }
 
-/* Keep Home bold on the homepage. */
-
 .nav-links a.active {
     font-weight: 700;
 }
@@ -111,9 +104,6 @@ a:focus-visible {
    3. FULL-WIDTH BANNER
 ========================================= */
 
-/* Preserve the complete image without cropping.
-   The banner height follows the image proportions. */
-
 .banner {
     width: 100%;
     margin: 0;
@@ -129,15 +119,6 @@ a:focus-visible {
 /* =========================================
    4. MAIN TWO-COLUMN LAYOUT
 ========================================= */
-
-/* The main section uses the full available width.
-   The columns scale proportionally with the viewport.
-
-   Left column:  0.4fr
-   Right column: 1fr
-
-   This gives the left column approximately 28.6%
-   of the available column width, after the gap. */
 
 .main-container {
     display: grid;
@@ -170,16 +151,8 @@ a:focus-visible {
     text-align: center;
 }
 
-/* The image scales with the width of the profile column.
-   Minimum: 160px.
-   Preferred: 65% of the profile column.
-   Maximum: 320px.
-
-   The square image box is displayed as a circle. */
-
 .profile-image {
     display: block;
-
     width: clamp(136px, 55%, 272px);
     height: auto;
     aspect-ratio: 1 / 1;
@@ -242,18 +215,14 @@ a:focus-visible {
     text-decoration: none;
 }
 
-.social-links a:hover span {
-    text-decoration-thickness: 2px;
-}
-
-/* Underline link labels */
-
 .social-links a span {
     text-decoration: underline;
     text-underline-offset: 3px;
 }
 
-/* Social media icons */
+.social-links a:hover span {
+    text-decoration-thickness: 2px;
+}
 
 .social-icon {
     display: block;
@@ -265,32 +234,31 @@ a:focus-visible {
 
 
 /* =========================================
-   7. RIGHT COLUMN: ABOUT SECTION
+   7. RIGHT COLUMN: RESEARCH OVERVIEW
 ========================================= */
 
-.about-section {
+.overview-section {
     min-width: 0;
 }
 
-.about-section h1 {
+.overview-section h1 {
     margin: 0 0 25px;
-
     font-size: 1.7rem;
     font-weight: 600;
     line-height: 1.3;
 }
 
-.about-section p {
+.overview-section p {
     max-width: 1100px;
     margin: 0 0 22px;
 }
 
 
 /* =========================================
-   ABOUT AND PUBLICATIONS LINKS
+   8. OVERVIEW AND PUBLICATIONS LINKS
 ========================================= */
 
-.about-link,
+.overview-link,
 .publications-link {
     display: inline-block;
     margin-top: 5px;
@@ -303,41 +271,22 @@ a:focus-visible {
     text-underline-offset: 3px;
 }
 
-.about-link {
+.overview-link {
     margin-bottom: 30px;
-}
-
-.about-link:hover,
-.publications-link:hover {
-    text-decoration-thickness: 2px;
-}
-
-
-/* =========================================
-   9. PUBLICATIONS LINK
-========================================= */
-
-.publications-link {
-    display: inline-block;
-    margin-top: 5px;
-
-    color: #ea0074;
-    font-size: 1.0rem;
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 3px;
 }
 
 .publications-link {
     margin-bottom: 30px;
 }
 
+.overview-link:hover,
 .publications-link:hover {
     text-decoration-thickness: 2px;
 }
 
+
 /* =========================================
-   FOOTER
+   9. FOOTER
 ========================================= */
 
 .site-footer {
@@ -347,12 +296,12 @@ a:focus-visible {
 }
 
 .site-footer-inner {
+    display: flex;
+    align-items: center;
+
     width: 100%;
     min-height: clamp(88px, 6vw, 110px);
     padding: 22px clamp(20px, 2.5vw, 48px);
-
-    display: flex;
-    align-items: center;
 }
 
 .site-footer-inner p {
@@ -361,15 +310,10 @@ a:focus-visible {
     font-size: 0.9rem;
 }
 
+
 /* =========================================
    10. BASIC NARROW-SCREEN FALLBACK
 ========================================= */
-
-/* This is only a basic safeguard for narrow screens.
-   PC, laptop, tablet and landscape layouts above
-   700px use the same fluid sizing rules above.
-
-   We can refine the mobile design separately later. */
 
 @media (max-width: 700px) {
 
@@ -399,7 +343,7 @@ a:focus-visible {
         text-align: center;
     }
 
-    .about-section h1 {
+    .overview-section h1 {
         font-size: 1.7rem;
     }
 
