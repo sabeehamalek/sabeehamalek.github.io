@@ -287,21 +287,29 @@ a:focus-visible {
 
 
 /* =========================================
-   8. ABOUT LINK
+   ABOUT AND PUBLICATIONS LINKS
 ========================================= */
 
-.about-link {
+.about-link,
+.publications-link {
     display: inline-block;
-    margin: 5px 0 30px;
+    margin-top: 5px;
 
     color: #ea0074;
-    font-size: 1.0rem;
+    font-size: 1rem;
     font-weight: 600;
-    text-decoration: none;
+
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
-.about-link:hover {
-    text-decoration: underline;
+.about-link {
+    margin-bottom: 30px;
+}
+
+.about-link:hover,
+.publications-link:hover {
+    text-decoration-thickness: 2px;
 }
 
 
