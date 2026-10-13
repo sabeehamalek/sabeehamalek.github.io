@@ -37,7 +37,7 @@ body {
     width: 100%;
     margin: 0;
     border-bottom: 1px solid #e8e0d6;
-    background: #fffcf7;
+    background: #f0f0f0;
 }
 
 .navbar {
@@ -52,6 +52,9 @@ body {
     justify-content: space-between;
 
     gap: clamp(18px, 2vw, 40px);
+
+   min-height: clamp(88px, 6vw, 110px);
+   background: #f0f0f0;
 }
 
 .site-name {
@@ -60,6 +63,10 @@ body {
     font-weight: 660;
     text-decoration: none;
     white-space: nowrap;
+}
+
+.site-name .degree {
+    color: #ea0074;
 }
 
 .nav-links {
@@ -183,6 +190,12 @@ a:focus-visible {
     margin: 0 auto 25px;
 }
 
+.profile-details {
+    width: clamp(136px, 55%, 272px);
+    margin: 0 auto;
+    text-align: left;
+}
+
 .profile-name {
     margin: 0;
     font-size: 1.25rem;
@@ -208,7 +221,7 @@ a:focus-visible {
 .social-links {
     list-style: none;
     width: fit-content;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     text-align: left;
 }
@@ -305,6 +318,30 @@ a:focus-visible {
     text-decoration: underline;
 }
 
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    width: 100%;
+    background: #f0f0f0;
+    border-top: 1px solid #e8e0d6;
+}
+
+.site-footer-inner {
+    width: 100%;
+    min-height: clamp(88px, 6vw, 110px);
+    padding: 22px clamp(20px, 2.5vw, 48px);
+
+    display: flex;
+    align-items: center;
+}
+
+.site-footer-inner p {
+    margin: 0;
+    color: #555555;
+    font-size: 0.9rem;
+}
 
 /* =========================================
    10. BASIC NARROW-SCREEN FALLBACK
