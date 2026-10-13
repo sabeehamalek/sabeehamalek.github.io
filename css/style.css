@@ -317,8 +317,6 @@ a:focus-visible {
    9. PUBLICATIONS LINK
 ========================================= */
 
-/* Simple text link: no box, border or background. */
-
 .publications-link {
     display: inline-block;
     margin-top: 5px;
@@ -326,11 +324,16 @@ a:focus-visible {
     color: #ea0074;
     font-size: 1.0rem;
     font-weight: 600;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.publications-link {
+    margin-bottom: 30px;
 }
 
 .publications-link:hover {
-    text-decoration: underline;
+    text-decoration-thickness: 2px;
 }
 
 /* =========================================
