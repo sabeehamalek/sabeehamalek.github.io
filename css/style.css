@@ -191,7 +191,9 @@ a:focus-visible {
 }
 
 .profile-details {
-    width: clamp(136px, 55%, 272px);
+    display: inline-block;
+    width: fit-content;
+    max-width: 100%;
     margin: 0 auto;
     text-align: left;
 }
@@ -201,12 +203,14 @@ a:focus-visible {
     font-size: 1.25rem;
     font-weight: 600;
     line-height: 1.4;
+    white-space: nowrap;
 }
 
 .profile-title {
     margin: 5px 0 25px;
     color: #555555;
     font-size: 1rem;
+    white-space: nowrap;
 }
 
 
