@@ -62,7 +62,7 @@ body {
 }
 
 .site-name .degree {
-    color: #ea0074;
+    color: #e22450;
 }
 
 .nav-links {
@@ -84,7 +84,7 @@ body {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #ea0074;
+    color: #e22450;
 }
 
 .nav-links a.active {
@@ -95,7 +95,7 @@ body {
 /* Keyboard accessibility */
 
 a:focus-visible {
-    outline: 2px solid #ea0074;
+    outline: 2px solid #e22450;
     outline-offset: 4px;
 }
 
@@ -209,7 +209,7 @@ a:focus-visible {
     justify-content: flex-start;
     gap: 9px;
 
-    color: #ea0074;
+    color: #e22450;
     font-size: 0.95rem;
     font-weight: 450;
     text-decoration: none;
@@ -263,7 +263,7 @@ a:focus-visible {
     display: inline-block;
     margin-top: 5px;
 
-    color: #ea0074;
+    color: #e22450;
     font-size: 1rem;
     font-weight: 600;
 
