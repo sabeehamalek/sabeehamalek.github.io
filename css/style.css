@@ -364,3 +364,290 @@ a:focus-visible {
     }
 
 }
+
+/* =========================================
+   11. MOBILE NAVIGATION AND FOLLOW POP-UP
+========================================= */
+
+/* Hidden on desktop */
+.menu-toggle,
+.follow-button,
+.follow-modal-overlay {
+    display: none;
+}
+
+
+/* =========================================
+   MOBILE STYLES
+========================================= */
+
+@media (max-width: 700px) {
+
+    /* Header and hamburger button */
+
+    .navbar {
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 18px 20px;
+        min-height: 76px;
+    }
+
+    .site-name {
+        font-size: 1.15rem;
+        white-space: normal;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+
+        width: 44px;
+        height: 44px;
+        padding: 8px;
+        flex-shrink: 0;
+
+        background: transparent;
+        border: 1px solid #d6d0c8;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #111111;
+        border-radius: 2px;
+    }
+
+    .menu-toggle:hover {
+        background: #e8e5e1;
+    }
+
+
+    /* Navigation pop-up */
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 12px;
+        z-index: 1000;
+
+        flex-direction: column;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        gap: 0;
+
+        width: min(260px, calc(100vw - 24px));
+        margin: 0;
+        padding: 8px 0;
+
+        background: #fffcf7;
+        border: 1px solid #e8e0d6;
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgb(0 0 0 / 14%);
+    }
+
+    .navbar.menu-open .nav-links {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 11px 18px;
+        font-size: 1rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        background: #f5eee9;
+    }
+
+    /* Avoid bold text changing the width of menu items */
+    .nav-links a::after {
+        content: none;
+    }
+
+
+    /* Profile and Follow me button */
+
+    .profile-column {
+        text-align: center;
+    }
+
+    .profile-details {
+        display: block;
+        width: 100%;
+    }
+
+    .profile-name {
+        white-space: normal;
+    }
+
+    .profile-title {
+        white-space: normal;
+        margin-bottom: 18px;
+    }
+
+    /* Hide the regular social links on the mobile homepage */
+    .profile-column > .profile-details > .social-links {
+        display: none;
+    }
+
+    .follow-button {
+        display: inline-block;
+        margin: 0 auto 10px;
+        padding: 9px 25px;
+
+        background: #e22450;
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+
+        font: inherit;
+        font-size: 0.95rem;
+        font-weight: 600;
+
+        cursor: pointer;
+    }
+
+    .follow-button:hover {
+        background: #bd1b40;
+    }
+
+
+    /* Dimmed background behind the Follow me pop-up */
+
+    .follow-modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 16px;
+        background: rgb(0 0 0 / 55%);
+    }
+
+    .follow-modal-overlay.is-open {
+        display: flex;
+    }
+
+
+    /* Follow me pop-up panel */
+
+    .follow-modal {
+        position: relative;
+        width: 66.666vw;
+        max-width: 360px;
+        max-height: 85vh;
+        overflow-y: auto;
+
+        padding: 28px 18px 24px;
+
+        background: #fffcf7;
+        border-radius: 12px;
+        box-shadow: 0 12px 36px rgb(0 0 0 / 22%);
+
+        text-align: center;
+    }
+
+    .follow-modal-close {
+        position: absolute;
+        top: 6px;
+        right: 10px;
+
+        width: 32px;
+        height: 32px;
+        padding: 0;
+
+        background: transparent;
+        color: #555555;
+        border: none;
+
+        font-size: 1.8rem;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .follow-modal-close:hover {
+        color: #e22450;
+    }
+
+    .follow-modal-image {
+        display: block;
+        width: 90px;
+        height: 90px;
+        margin: 4px auto 12px;
+
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .follow-modal-name {
+        margin: 0;
+        font-size: 1.05rem;
+        font-weight: 700;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+    }
+
+    .follow-modal-title {
+        margin: 5px 0 18px;
+        color: #555555;
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .follow-modal-social-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: fit-content;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .follow-modal-social-links li {
+        margin: 7px 0;
+    }
+
+    .follow-modal-social-links a {
+        gap: 7px;
+        font-size: 0.82rem;
+    }
+
+    .follow-modal-social-links .social-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+}
+
+
+/* Very narrow phones */
+
+@media (max-width: 360px) {
+
+    .follow-modal {
+        width: 82vw;
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+}
