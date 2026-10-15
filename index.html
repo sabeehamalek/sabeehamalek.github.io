@@ -39,34 +39,43 @@
             Sabeeha Malek, <span class="degree">PhD</span>
         </a>
 
-        <ul class="nav-links">
+        <!-- Mobile hamburger button -->
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="nav-links"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Navigation links -->
+        <ul class="nav-links" id="nav-links">
             <li>
                 <a href="index.html"
                    class="active"
                    aria-current="page"
                    data-text="Home">Home</a>
             </li>
-
             <li>
                 <a href="about.html"
                    data-text="About me">About me</a>
             </li>
-
             <li>
                 <a href="publications.html"
                    data-text="Publications">Publications</a>
             </li>
-
             <li>
                 <a href="press.html"
                    data-text="Press &amp; Media">Press &amp; Media</a>
             </li>
-
             <li>
                 <a href="resources.html"
                    data-text="Resources">Resources</a>
             </li>
-
             <li>
                 <a href="contact.html"
                    data-text="Contact">Contact</a>
@@ -102,6 +111,10 @@
 
                 <p class="profile-title">Biomedical Researcher</p>
 
+                <button class="follow-button" id="follow-button" type="button">
+                  Follow me
+                </button>
+                
                 <ul class="social-links">
 
                     <li>
@@ -215,12 +228,195 @@
 
     </main>
 
+<!-- Mobile Follow me pop-up -->
+<div
+    class="follow-modal-overlay"
+    id="follow-modal"
+    aria-hidden="true"
+>
+    <section
+        class="follow-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="follow-modal-name"
+    >
+        <button
+            class="follow-modal-close"
+            id="follow-modal-close"
+            type="button"
+            aria-label="Close Follow me pop-up"
+        >
+            &times;
+        </button>
+
+        <img
+            src="images/profile.jpg"
+            alt="Portrait of Sabeeha Malek"
+            class="follow-modal-image"
+        >
+
+        <h2 class="follow-modal-name" id="follow-modal-name">
+            Sabeeha Malek, PhD
+        </h2>
+
+        <p class="follow-modal-title">Biomedical Researcher</p>
+
+        <ul class="social-links follow-modal-social-links">
+
+            <li>
+                <a href="https://orcid.org/0000-0002-6130-541X"
+                   target="_blank" rel="noopener noreferrer">
+                    <img src="images/icons/orcid.svg"
+                         class="social-icon" alt="">
+                    <span>ORCID iD</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://scholar.google.com/citations?user=3GFm5_kAAAAJ&amp;hl=en"
+                   target="_blank" rel="noopener noreferrer">
+                    <img src="images/icons/google-scholar.svg"
+                         class="social-icon" alt="">
+                    <span>Google Scholar</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.researchgate.net/profile/Sabeeha-Malek-2"
+                   target="_blank" rel="noopener noreferrer">
+                    <img src="images/icons/researchgate.svg"
+                         class="social-icon" alt="">
+                    <span>ResearchGate</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://uk.linkedin.com/in/sabeehamalek"
+                   target="_blank" rel="noopener noreferrer">
+                    <img src="images/icons/linkedin.svg"
+                         class="social-icon" alt="">
+                    <span>LinkedIn</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://bsky.app/profile/sabeehamalek.bsky.social"
+                   target="_blank" rel="noopener noreferrer">
+                    <img src="images/icons/bluesky.svg"
+                         class="social-icon" alt="">
+                    <span>Bluesky</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.instagram.com/sabeehamalek/"
+                   target="_blank" rel="noopener noreferrer">
+                    <img src="images/icons/instagram.svg"
+                         class="social-icon" alt="">
+                    <span>Instagram</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://x.com/SabeehaMalek"
+                   target="_blank" rel="noopener noreferrer">
+                    <img src="images/icons/x.svg"
+                         class="social-icon" alt="">
+                    <span>Twitter / X</span>
+                </a>
+            </li>
+
+        </ul>
+    </section>
+</div>
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="site-footer-inner">
             <p>&copy; 2026 Sabeeha Malek</p>
         </div>
     </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton = document.querySelector(".menu-toggle");
+    const navbar = document.querySelector(".navbar");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    const followButton = document.getElementById("follow-button");
+    const followModal = document.getElementById("follow-modal");
+    const closeFollowModal = document.getElementById("follow-modal-close");
+
+    /* Open and close the mobile navigation menu */
+
+    function closeMenu() {
+        navbar.classList.remove("menu-open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+    }
+
+    menuButton.addEventListener("click", function () {
+        const isOpen = navbar.classList.toggle("menu-open");
+
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+    });
+
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+    });
+
+
+    /* Open and close the Follow me pop-up */
+
+    function openFollowModal() {
+        followModal.classList.add("is-open");
+        followModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        closeFollowModal.focus();
+    }
+
+    function closeFollowModalPopup() {
+        followModal.classList.remove("is-open");
+        followModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        followButton.focus();
+    }
+
+    followButton.addEventListener("click", openFollowModal);
+
+    closeFollowModal.addEventListener("click", closeFollowModalPopup);
+
+    /* Close when the user clicks the dimmed area outside the panel */
+
+    followModal.addEventListener("click", function (event) {
+        if (event.target === followModal) {
+            closeFollowModalPopup();
+        }
+    });
+
+
+    /* Close open menus with the Escape key */
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            if (followModal.classList.contains("is-open")) {
+                closeFollowModalPopup();
+            }
+
+            if (navbar.classList.contains("menu-open")) {
+                closeMenu();
+                menuButton.focus();
+            }
+        }
+    });
+
+});
+</script>
 
 </body>
 </html>
