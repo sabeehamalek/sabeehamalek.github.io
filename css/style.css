@@ -76,21 +76,31 @@ body {
     padding: 0;
 }
 
+
 .nav-links a {
+    position: relative;
     color: #111111;
     font-size: 0.95rem;
+    font-weight: 400;
     text-decoration: none;
+}
+
+/* Reserve the bold text's width so links don't shift */
+.nav-links a::after {
+    content: attr(data-text);
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    font-weight: 700;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #e22450;
+    color: #ea0074;
     font-weight: 700;
 }
 
-.nav-links a.active {
-    font-weight: 700;
-}
 
 
 /* Keyboard accessibility */
@@ -299,7 +309,7 @@ a:focus-visible {
 .site-footer-inner {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 
     width: 100%;
     min-height: clamp(88px, 6vw, 110px);
