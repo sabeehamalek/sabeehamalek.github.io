@@ -96,12 +96,12 @@ body {
 }
 
 .nav-links a:hover {
-    color: #ea0074;
+    color: #e22450;
     font-weight: 500;
 }
 
 .nav-links a.active {
-    color: #ea0074;
+    color: #e22450;
     font-weight: 700;
 }
 
