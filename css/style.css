@@ -552,7 +552,7 @@ a:focus-visible {
 
     .follow-modal {
         position: relative;
-        width: 66.666vw;
+        width: 75vw;
         max-width: 360px;
         max-height: 85vh;
         overflow-y: auto;
