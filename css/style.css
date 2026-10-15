@@ -95,7 +95,11 @@ body {
     font-weight: 700;
 }
 
-.nav-links a:hover,
+.nav-links a:hover {
+    color: #ea0074;
+    font-weight: 600;
+}
+
 .nav-links a.active {
     color: #ea0074;
     font-weight: 700;
