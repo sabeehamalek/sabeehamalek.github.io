@@ -85,13 +85,19 @@
     </nav>
 </header>
 
-    <!-- Full-width banner -->
-    <section class="banner">
+<!-- Responsive full-width banner -->
+<section class="banner">
+    <picture>
+        <source
+            media="(max-width: 700px)"
+            srcset="images/banner-mobile.jpg"
+        >
         <img
             src="images/banner.jpg"
             alt="Microscopy images from biomedical research"
         >
-    </section>
+    </picture>
+</section>
 
     <!-- Main content -->
     <main class="main-container">
@@ -356,7 +362,9 @@ document.addEventListener("DOMContentLoaded", function () {
         menuButton.setAttribute("aria-label", "Open navigation menu");
     }
 
-    menuButton.addEventListener("click", function () {
+    menuButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+
         const isOpen = navbar.classList.toggle("menu-open");
 
         menuButton.setAttribute("aria-expanded", String(isOpen));
@@ -366,8 +374,21 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     });
 
+    /* Close the navigation menu after selecting a page */
+
     navLinks.forEach(function (link) {
         link.addEventListener("click", closeMenu);
+    });
+
+    /* Close the navigation menu when tapping outside it */
+
+    document.addEventListener("click", function (event) {
+        if (
+            navbar.classList.contains("menu-open") &&
+            !navbar.contains(event.target)
+        ) {
+            closeMenu();
+        }
     });
 
 
@@ -391,7 +412,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     closeFollowModal.addEventListener("click", closeFollowModalPopup);
 
-    /* Close when the user clicks the dimmed area outside the panel */
+    /* Close the Follow me pop-up when tapping outside the panel */
 
     followModal.addEventListener("click", function (event) {
         if (event.target === followModal) {
