@@ -692,12 +692,17 @@ a:focus-visible {
 }
 
 /* =========================================
-   MOBILE: SQUARE PROFILE IMAGE AND FOLLOW BUTTON
+   MOBILE: PROFILE IMAGE OVERLAP AND BUTTON
 ========================================= */
 
 @media (max-width: 700px) {
 
-    /* Larger square profile image with white border */
+    /* Allow the profile image to overlap the banner */
+    .main-container {
+        padding-top: 0;
+    }
+
+    /* Square profile image with white border */
     .profile-image {
         width: clamp(156px, 63.25%, 313px);
         height: auto;
@@ -707,14 +712,14 @@ a:focus-visible {
         border: 5px solid #ffffff;
         border-radius: 0;
 
-        /* Preserve approximately the same proportional overlap */
+        /* Overlap the banner by approximately 15% of image height */
         margin: clamp(-47.15px, -8.625vw, -26.45px) auto 25px;
     }
 
-    /* Match the Follow me button width to the profile image */
+    /* Follow me button: 20% narrower than the profile image */
     .follow-button {
         display: block;
-        width: clamp(156px, 63.25%, 313px);
+        width: clamp(124.8px, 50.6%, 250.4px);
         margin: 0 auto 10px;
         padding: 9px 12px;
 
