@@ -316,8 +316,8 @@ a:focus-visible {
     justify-content: center;
 
     width: 100%;
-    min-height: clamp(88px, 6vw, 110px);
-    padding: 22px clamp(20px, 2.5vw, 48px);
+    min-height: clamp(70px, 4.8vw, 88px);
+    padding: 18px clamp(20px, 2.5vw, 48px);
 }
 
 .site-footer-inner p {
@@ -401,34 +401,51 @@ a:focus-visible {
     }
 
     .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5.1px;
 
-        width: 44px;
-        height: 44px;
-        padding: 8px;
-        flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    flex-shrink: 0;
 
-        background: transparent;
-        border: 1px solid #d6d0c8;
-        border-radius: 6px;
-        cursor: pointer;
-    }
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    appearance: none;
 
-    .menu-toggle span {
-        display: block;
-        width: 24px;
-        height: 2px;
-        background: #111111;
-        border-radius: 2px;
-    }
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
 
-    .menu-toggle:hover {
-        background: #e8e5e1;
-    }
+.menu-toggle span {
+    display: block;
+    width: 20.4px;
+    height: 1.7px;
+    background: #111111;
+    border-radius: 2px;
+}
+
+.menu-toggle:hover,
+.menu-toggle:active {
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Prevent a mouse click from leaving a visible outline */
+.menu-toggle:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Keep a focus indicator for keyboard users */
+.menu-toggle:focus-visible {
+    outline: 2px solid #e22450;
+    outline-offset: 4px;
+}
 
 
     /* Navigation pop-up */
@@ -528,43 +545,65 @@ a:focus-visible {
     }
 
 
-    /* Dimmed background behind the Follow me pop-up */
+    /* =========================================
+   FOLLOW ME: SLIDING LEFT-HAND PANEL
+========================================= */
 
-    .follow-modal-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        z-index: 2000;
+/* Transparent overlay: the homepage remains visible */
+.follow-modal-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
 
-        align-items: center;
-        justify-content: center;
+    background: transparent;
 
-        padding: 16px;
-        background: rgb(0 0 0 / 55%);
-    }
+    visibility: hidden;
+    pointer-events: none;
 
-    .follow-modal-overlay.is-open {
-        display: flex;
-    }
+    /* Allow the panel to slide out before hiding the overlay */
+    transition: visibility 0s linear 0.32s;
+}
 
+/* Show the overlay without dimming the homepage */
+.follow-modal-overlay.is-open {
+    visibility: visible;
+    pointer-events: auto;
+    transition: visibility 0s;
+}
 
-    /* Follow me pop-up panel */
+/* Panel slides in from the left */
+.follow-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
 
-    .follow-modal {
-        position: relative;
-        width: 75vw;
-        max-width: 360px;
-        max-height: 85vh;
-        overflow-y: auto;
+    width: 80vw;
+    max-width: none;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
 
-        padding: 28px 18px 24px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
 
-        background: #fffcf7;
-        border-radius: 12px;
-        box-shadow: 0 12px 36px rgb(0 0 0 / 22%);
+    padding: 40px 18px 24px;
 
-        text-align: center;
-    }
+    background: #fffcf7;
+    border-radius: 0;
+    box-shadow: 8px 0 24px rgb(0 0 0 / 12%);
+
+    text-align: center;
+
+    /* Start just outside the left edge */
+    transform: translateX(-100%);
+    transition: transform 0.32s ease;
+}
+
+/* Slide into view when Follow me is pressed */
+.follow-modal-overlay.is-open .follow-modal {
+    transform: translateX(0);
+}
 
     .follow-modal-close {
         position: absolute;
@@ -645,7 +684,7 @@ a:focus-visible {
 @media (max-width: 360px) {
 
     .follow-modal {
-        width: 82vw;
+        width: 80vw;
         padding-right: 14px;
         padding-left: 14px;
     }
