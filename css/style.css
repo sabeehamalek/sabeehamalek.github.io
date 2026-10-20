@@ -629,8 +629,8 @@ a:focus-visible {
 
     .follow-modal-image {
         display: block;
-        width: 90px;
-        height: 90px;
+        width: 165px;
+        height: 165px;
         margin: 4px auto 12px;
 
         object-fit: cover;
