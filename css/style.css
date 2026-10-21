@@ -839,12 +839,15 @@ a:focus-visible {
                 background-color 0.15s ease;
 }
 
-.share-icon-link img {
+
+.share-icon-link img,
+.share-icon-button img {
     display: block;
     width: 28px;
     height: 28px;
     object-fit: contain;
 }
+
 
 .share-icon-link:hover,
 .share-icon-button:hover {
