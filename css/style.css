@@ -888,7 +888,7 @@ a:focus-visible {
     margin: 0;
     color: #777777;
     font-size: 0.75rem;
-    text-align: right;
+    text-align: center;
 }
 
 .share-status:empty {
