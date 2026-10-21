@@ -728,14 +728,14 @@ a:focus-visible {
         padding-top: 0;
     }
 
-    /* Square profile image with white border */
+    /* profile image with white border */
     .profile-image {
         width: clamp(156px, 63.25%, 313px);
         height: auto;
         aspect-ratio: 1 / 1;
 
         object-fit: cover;
-        border: 3px solid #ffffff;
+        border: 5px solid #ffffff;
         border-radius: 50%;
 
         /* Overlap the banner by approximately 15% of image height */
