@@ -114,7 +114,6 @@ a:focus-visible {
     outline-offset: 4px;
 }
 
-
 /* =========================================
    3. FULL-WIDTH BANNER
 ========================================= */
@@ -122,6 +121,12 @@ a:focus-visible {
 .banner {
     width: 100%;
     margin: 0;
+    border-top: 10px solid #e22450;
+    border-bottom: 10px solid #e22450;
+}
+
+.banner picture {
+    display: block;
 }
 
 .banner img {
@@ -130,6 +135,13 @@ a:focus-visible {
     height: auto;
 }
 
+/* Thinner banner borders on mobile */
+@media (max-width: 700px) {
+    .banner {
+        border-top-width: 6px;
+        border-bottom-width: 6px;
+    }
+}
 
 /* =========================================
    4. MAIN TWO-COLUMN LAYOUT
