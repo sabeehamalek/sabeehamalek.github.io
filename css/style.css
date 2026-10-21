@@ -800,7 +800,7 @@ a:focus-visible {
 .share-inner {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 12px;
 
@@ -888,7 +888,7 @@ a:focus-visible {
     margin: 0;
     color: #777777;
     font-size: 0.75rem;
-    text-align: center;
+    text-align: left;
 }
 
 .share-status:empty {
