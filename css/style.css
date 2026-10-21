@@ -176,6 +176,11 @@ a:focus-visible {
     border-radius: 50%;
 
     margin: 0 auto 25px;
+
+       /* Subtle 3D lift */
+    box-shadow:
+        0 5px 10px rgba(0, 0, 0, 0.12),
+        0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 .profile-details {
@@ -637,6 +642,11 @@ a:focus-visible {
     object-fit: cover;
     border: 5px solid #ffffff;
     border-radius: 0;
+
+       /* Subtle 3D lift */
+    box-shadow:
+        0 5px 10px rgba(0, 0, 0, 0.12),
+        0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
 
