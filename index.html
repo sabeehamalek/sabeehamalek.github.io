@@ -336,6 +336,99 @@
     </section>
 </div>
 
+    
+<!-- Share this page -->
+<section class="share-section" aria-label="Share this page">
+    <div class="share-inner">
+
+        <h2>share</h2>
+
+        <div class="share-links">
+
+            <!-- 1. Native share -->
+            <button
+                type="button"
+                class="share-icon-button"
+                data-share-action="native"
+                aria-label="Share this page"
+                title="Share this page"
+            >
+                <img src="images/icons/share.svg" alt="">
+            </button>
+
+            <!-- 2. LinkedIn -->
+            <a
+                href="#"
+                class="share-icon-link"
+                data-share-link="linkedin"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on LinkedIn"
+                title="Share on LinkedIn"
+            >
+                <img src="images/icons/linkedin.svg" alt="">
+            </a>
+
+            <!-- 3. Bluesky -->
+            <a
+                href="#"
+                class="share-icon-link"
+                data-share-link="bluesky"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on Bluesky"
+                title="Share on Bluesky"
+            >
+                <img src="images/icons/bluesky.svg" alt="">
+            </a>
+
+            <!-- 4. X -->
+            <a
+                href="#"
+                class="share-icon-link"
+                data-share-link="x"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on X"
+                title="Share on X"
+            >
+                <img src="images/icons/x.svg" alt="">
+            </a>
+
+            <!-- 5. Facebook -->
+            <a
+                href="#"
+                class="share-icon-link"
+                data-share-link="facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on Facebook"
+                title="Share on Facebook"
+            >
+                <img src="images/icons/facebook.svg" alt="">
+            </a>
+
+            <!-- 6. Email -->
+            <a
+                href="#"
+                class="share-icon-link"
+                data-share-link="email"
+                aria-label="Share this page by email"
+                title="Share by email"
+            >
+                <img src="images/icons/email.svg" alt="">
+            </a>
+
+        </div>
+
+        <p class="share-status"
+           id="share-status"
+           role="status"
+           aria-live="polite"></p>
+
+    </div>
+</section>
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="site-footer-inner">
@@ -437,6 +530,93 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+</script>
+
+    
+<script>
+(function () {
+    const pageUrl = window.location.href.split("#")[0];
+    const pageTitle = document.title;
+
+    const encodedUrl = encodeURIComponent(pageUrl);
+    const encodedTitle = encodeURIComponent(pageTitle);
+
+    /* Set up the social media sharing links */
+
+    document.querySelectorAll("[data-share-link]").forEach(function (link) {
+        const platform = link.dataset.shareLink;
+
+        switch (platform) {
+            case "linkedin":
+                link.href =
+                    "https://www.linkedin.com/sharing/share-offsite/?url=" +
+                    encodedUrl;
+                break;
+
+            case "bluesky":
+                link.href =
+                    "https://bsky.app/intent/compose?text=" +
+                    encodeURIComponent(pageTitle + " " + pageUrl);
+                break;
+
+            case "x":
+                link.href =
+                    "https://x.com/intent/tweet?url=" +
+                    encodedUrl +
+                    "&text=" + encodedTitle;
+                break;
+
+            case "facebook":
+                link.href =
+                    "https://www.facebook.com/sharer/sharer.php?u=" +
+                    encodedUrl;
+                break;
+
+            case "email":
+                link.href =
+                    "mailto:?subject=" + encodedTitle +
+                    "&body=" +
+                    encodeURIComponent(
+                        "I thought you might find this page interesting:\n\n" +
+                        pageTitle + "\n" + pageUrl
+                    );
+                break;
+        }
+    });
+
+    /* Native sharing, with a copy-link fallback */
+
+    const nativeButton =
+        document.querySelector('[data-share-action="native"]');
+
+    const status = document.getElementById("share-status");
+
+    if (nativeButton) {
+        nativeButton.addEventListener("click", async function () {
+            if (navigator.share) {
+                try {
+                    await navigator.share({
+                        title: pageTitle,
+                        url: pageUrl
+                    });
+                } catch (error) {
+                    if (error.name !== "AbortError") {
+                        status.textContent =
+                            "Sharing was unavailable. Please copy the page link from your address bar.";
+                    }
+                }
+            } else {
+                try {
+                    await navigator.clipboard.writeText(pageUrl);
+                    status.textContent =
+                        "Native sharing is unavailable here. The page link has been copied.";
+                } catch (error) {
+                    window.prompt("Copy this page link:", pageUrl);
+                }
+            }
+        });
+    }
+})();
 </script>
 
 </body>
