@@ -783,28 +783,36 @@ a:focus-visible {
    SHARE THIS PAGE
 ========================================= */
 
+
+/* =========================================
+   SHARE THIS PAGE
+========================================= */
+
 .share-section {
     width: 100%;
-    border-top: 1px solid #e8e0d6;
-    background: #fffcf7;
+    margin-top: clamp(28px, 3vw, 42px);
+
+    /* No divider or separate background */
+    border: none;
+    background: transparent;
 }
 
 .share-inner {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px;
 
     width: 100%;
-    padding: 18px clamp(20px, 2.5vw, 48px);
+    padding: 0;
 }
 
-
+/* Grey Share label */
 .share-inner h2 {
     margin: 0;
     color: #777777;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     line-height: 1.4;
 }
@@ -812,9 +820,23 @@ a:focus-visible {
 .share-links {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
+}
+
+/* Consistent size for all six share icons */
+.share-icon-link img,
+.share-icon-button img {
+    display: block;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+
+    /* Render the icons in grey tones */
+    filter: grayscale(1);
+    opacity: 0.7;
+    transition: opacity 0.15s ease;
 }
 
 .share-icon-link,
@@ -827,7 +849,7 @@ a:focus-visible {
     height: 36px;
     padding: 4px;
 
-    color: #e22450;
+    color: #777777;
     background: transparent;
     border: none;
     border-radius: 5px;
@@ -839,20 +861,16 @@ a:focus-visible {
                 background-color 0.15s ease;
 }
 
-
-.share-icon-link img,
-.share-icon-button img {
-    display: block;
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-}
-
-
 .share-icon-link:hover,
 .share-icon-button:hover {
     background: #f5eee9;
     transform: translateY(-2px);
+}
+
+.share-icon-link:hover img,
+.share-icon-button:hover img {
+    opacity: 1;
+    filter: grayscale(1);
 }
 
 .share-icon-link:focus-visible,
@@ -868,14 +886,26 @@ a:focus-visible {
 .share-status {
     flex-basis: 100%;
     margin: 0;
-    color: #555555;
+    color: #777777;
     font-size: 0.75rem;
-    text-align: center;
+    text-align: right;
 }
 
 .share-status:empty {
     display: none;
 }
+
+/* Mobile layout */
+@media (max-width: 700px) {
+    .share-inner {
+        gap: 10px;
+    }
+
+    .share-links {
+        gap: 8px;
+    }
+}
+
 
 /* Mobile layout */
 @media (max-width: 700px) {
