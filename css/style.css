@@ -173,6 +173,7 @@ a:focus-visible {
     aspect-ratio: 1 / 1;
 
     object-fit: cover;
+    border: 5px solid #ffffff;
     border-radius: 50%;
 
     margin: 0 auto 25px;
@@ -723,7 +724,7 @@ a:focus-visible {
 
         object-fit: cover;
         border: 5px solid #ffffff;
-        border-radius: 0;
+        border-radius: 50%;
 
         /* Overlap the banner by approximately 15% of image height */
         margin: clamp(-47.15px, -8.625vw, -26.45px) auto 25px;
