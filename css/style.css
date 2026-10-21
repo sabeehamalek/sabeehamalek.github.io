@@ -653,7 +653,7 @@ a:focus-visible {
     margin: 4px auto 12px;
 
     object-fit: cover;
-    border: 5px solid #ffffff;
+    border: 0px solid #ffffff;
     border-radius: 50%;
 
        /* Subtle 3D lift */
@@ -735,7 +735,7 @@ a:focus-visible {
         aspect-ratio: 1 / 1;
 
         object-fit: cover;
-        border: 5px solid #ffffff;
+        border: 0px solid #ffffff;
         border-radius: 50%;
 
         /* Overlap the banner by approximately 15% of image height */
