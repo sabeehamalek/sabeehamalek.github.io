@@ -763,17 +763,17 @@ a:focus-visible {
 
     /* Your name */
     .follow-modal-name {
-        font-size: 1.21rem;
+        font-size: 1.0rem;
     }
 
     /* Biomedical Researcher */
     .follow-modal-title {
-        font-size: 1.04rem;
+        font-size: 0.9rem;
     }
 
     /* Social media link labels */
     .follow-modal-social-links a {
-        font-size: 0.94rem;
+        font-size: 0.8rem;
     }
 
 }
