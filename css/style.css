@@ -107,8 +107,10 @@ a:focus-visible {
     font-weight: 700;
 }
 
-/* Hidden on desktop */
-.menu-toggle {
+/* Elements shown only on mobile */
+.menu-toggle,
+.follow-button,
+.follow-modal-overlay {
     display: none;
 }
 
@@ -563,13 +565,27 @@ a:focus-visible {
         content: none;
     }
 
-    /* Main content becomes a single column */
+/* Main content: single-column mobile layout */
+.main-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 45px;
+    padding: 0 20px 55px;
+}
 
-    .main-container {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 45px;
-        padding: 0 20px 55px;
-    }
+/* Mobile homepage profile image */
+.profile-image {
+    display: block;
+    width: clamp(156px, 63.25%, 313px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+    border: 5px solid #ffffff;
+    border-radius: 50%;
+
+    /* Overlap the banner by approximately 15% of image height */
+    margin: clamp(-47.15px, -8.625vw, -26.45px) auto 25px;
+}
 
     .profile-details {
         display: block;
