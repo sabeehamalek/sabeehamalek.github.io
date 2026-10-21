@@ -309,7 +309,7 @@ a:focus-visible {
 
 .share-section {
     width: 100%;
-    margin-top: clamp(28px, 3vw, 42px);
+    margin-top: clamp(56px, 6vw, 84px);
     background: transparent;
 }
 
