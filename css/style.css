@@ -778,3 +778,112 @@ a:focus-visible {
 
 }
 
+
+/* =========================================
+   SHARE THIS PAGE
+========================================= */
+
+.share-section {
+    width: 100%;
+    border-top: 1px solid #e8e0d6;
+    background: #fffcf7;
+}
+
+.share-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    width: 100%;
+    padding: 18px clamp(20px, 2.5vw, 48px);
+}
+
+
+.share-inner h2 {
+    margin: 0;
+    color: #777777;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.share-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.share-icon-link,
+.share-icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+
+    color: #e22450;
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition: transform 0.15s ease,
+                background-color 0.15s ease;
+}
+
+.share-icon-link img {
+    display: block;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.share-icon-link:hover,
+.share-icon-button:hover {
+    background: #f5eee9;
+    transform: translateY(-2px);
+}
+
+.share-icon-link:focus-visible,
+.share-icon-button:focus-visible {
+    outline: 2px solid #e22450;
+    outline-offset: 3px;
+}
+
+.share-icon-button[hidden] {
+    display: none;
+}
+
+.share-status {
+    flex-basis: 100%;
+    margin: 0;
+    color: #555555;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.share-status:empty {
+    display: none;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+
+    .share-inner {
+        gap: 12px;
+        padding: 18px 20px;
+    }
+
+    .share-links {
+        gap: 10px;
+    }
+
+}
