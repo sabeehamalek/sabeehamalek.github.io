@@ -121,8 +121,8 @@ a:focus-visible {
 .banner {
     width: 100%;
     margin: 0;
-    border-top: 10px solid #e22450;
-    border-bottom: 10px solid #e22450;
+    border-top: 8px solid #e22450;
+    border-bottom: 8px solid #e22450;
 }
 
 .banner picture {
