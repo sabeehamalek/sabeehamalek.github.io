@@ -185,7 +185,7 @@ a:focus-visible {
     aspect-ratio: 1 / 1;
 
     object-fit: cover;
-    border: 3px solid #fffcf7;
+    border: 0px solid #fffcf7;
     border-radius: 50%;
 
     margin: 0 auto 25px;
@@ -653,7 +653,7 @@ a:focus-visible {
     margin: 4px auto 12px;
 
     object-fit: cover;
-    border: 3px solid #ffffff;
+    border: 5px solid #ffffff;
     border-radius: 50%;
 
        /* Subtle 3D lift */
