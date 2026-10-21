@@ -627,15 +627,18 @@ a:focus-visible {
         color: #e22450;
     }
 
-    .follow-modal-image {
-        display: block;
-        width: 145px;
-        height: 145px;
-        margin: 4px auto 12px;
 
-        object-fit: cover;
-        border-radius: 50%;
-    }
+.follow-modal-image {
+    display: block;
+    width: 145px;
+    height: 145px;
+    margin: 4px auto 12px;
+
+    object-fit: cover;
+    border: 5px solid #ffffff;
+    border-radius: 0;
+}
+
 
     .follow-modal-name {
         margin: 0;
