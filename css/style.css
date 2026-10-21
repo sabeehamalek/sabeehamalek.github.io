@@ -328,32 +328,6 @@ a:focus-visible {
 
 
 /* =========================================
-   DESKTOP: PROFILE IMAGE OVERLAPS BANNER
-========================================= */
-
-@media (min-width: 701px) {
-
-    /* Shift the main content upwards for the profile image */
-    .main-container {
-        padding-top: 0;
-    }
-
-    /* Square profile image with white border */
-    .profile-image {
-        border: 5px solid #ffffff;
-        border-radius: 0;
-
-        /* Overlap the banner */
-        margin: clamp(-40.8px, -8.25%, -20.4px) auto 25px;
-    }
-
-    /* Restore whitespace above the right-hand column */
-    .overview-section {
-        padding-top: clamp(40px, 4vw, 72px);
-    }
-
-}
-/* =========================================
    10. BASIC NARROW-SCREEN FALLBACK
 ========================================= */
 
