@@ -1,6 +1,6 @@
 
 /* =========================================
-   1. BASIC PAGE SETTINGS
+   1. BASE STYLES
 ========================================= */
 
 * {
@@ -9,8 +9,6 @@
 
 html {
     scroll-behavior: smooth;
-
-    /* Responsive font sizing */
     font-size: clamp(
         1.22rem,
         calc(0.8625rem + 0.575vw),
@@ -26,9 +24,14 @@ body {
     line-height: 1.6;
 }
 
+a:focus-visible {
+    outline: 2px solid #e22450;
+    outline-offset: 4px;
+}
+
 
 /* =========================================
-   2. NAVIGATION BAR
+   2. NAVIGATION
 ========================================= */
 
 .site-header {
@@ -39,17 +42,17 @@ body {
 }
 
 .navbar {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 22px clamp(20px, 2.5vw, 48px);
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: clamp(18px, 2vw, 40px);
 
+    width: 100%;
+    max-width: none;
     min-height: clamp(88px, 6vw, 110px);
+    margin: 0;
+    padding: 22px clamp(20px, 2.5vw, 48px);
+
     background: #f0f0f0;
 }
 
@@ -71,11 +74,10 @@ body {
     flex-wrap: wrap;
     gap: 12px clamp(10px, 1.25vw, 24px);
 
-    list-style: none;
     margin: 0;
     padding: 0;
+    list-style: none;
 }
-
 
 .nav-links a {
     position: relative;
@@ -85,7 +87,7 @@ body {
     text-decoration: none;
 }
 
-/* Reserve the bold text's width so links don't shift */
+/* Invisible text copy to reserve space in navigation links */
 .nav-links a::after {
     content: attr(data-text);
     display: block;
@@ -105,17 +107,14 @@ body {
     font-weight: 700;
 }
 
-
-
-/* Keyboard accessibility */
-
-a:focus-visible {
-    outline: 2px solid #e22450;
-    outline-offset: 4px;
+/* Hidden on desktop */
+.menu-toggle {
+    display: none;
 }
 
+
 /* =========================================
-   3. FULL-WIDTH BANNER
+   3. RESPONSIVE BANNER
 ========================================= */
 
 .banner {
@@ -135,42 +134,32 @@ a:focus-visible {
     height: auto;
 }
 
-/* Thinner banner borders on mobile */
-@media (max-width: 700px) {
-    .banner {
-        border-top-width: 6px;
-        border-bottom-width: 6px;
-    }
-}
 
 /* =========================================
-   4. MAIN TWO-COLUMN LAYOUT
+   4. MAIN LAYOUT
 ========================================= */
 
 .main-container {
     display: grid;
-
     grid-template-columns:
         minmax(0, 0.4fr)
         minmax(0, 1fr);
 
     align-items: start;
+    gap: clamp(28px, 3vw, 70px);
 
     width: 100%;
     max-width: none;
     margin: 0;
-
     padding:
         clamp(40px, 4vw, 72px)
         clamp(20px, 2.5vw, 48px)
         clamp(50px, 5vw, 90px);
-
-    gap: clamp(28px, 3vw, 70px);
 }
 
 
 /* =========================================
-   5. LEFT COLUMN: PROFILE
+   5. PROFILE COLUMN
 ========================================= */
 
 .profile-column {
@@ -183,14 +172,12 @@ a:focus-visible {
     width: clamp(136px, 55%, 272px);
     height: auto;
     aspect-ratio: 1 / 1;
-
-    object-fit: cover;
-    border: 0px solid #fffcf7;
-    border-radius: 50%;
-
     margin: 0 auto 25px;
 
-       /* Subtle 3D lift */
+    object-fit: cover;
+    border-radius: 50%;
+
+    /* Subtle depth effect */
     box-shadow:
         0 5px 10px rgba(0, 0, 0, 0.12),
         0 2px 4px rgba(0, 0, 0, 0.08);
@@ -225,10 +212,10 @@ a:focus-visible {
 ========================================= */
 
 .social-links {
-    list-style: none;
     width: fit-content;
     margin: 0 auto;
     padding: 0;
+    list-style: none;
     text-align: left;
 }
 
@@ -259,15 +246,15 @@ a:focus-visible {
 
 .social-icon {
     display: block;
+    flex-shrink: 0;
     width: 26px;
     height: 26px;
     object-fit: contain;
-    flex-shrink: 0;
 }
 
 
 /* =========================================
-   7. RIGHT COLUMN: RESEARCH OVERVIEW
+   7. RESEARCH OVERVIEW
 ========================================= */
 
 .overview-section {
@@ -288,7 +275,7 @@ a:focus-visible {
 
 
 /* =========================================
-   8. OVERVIEW AND PUBLICATIONS LINKS
+   8. CONTENT LINKS
 ========================================= */
 
 .overview-link,
@@ -299,15 +286,11 @@ a:focus-visible {
     color: #e22450;
     font-size: 1rem;
     font-weight: 600;
-
     text-decoration: underline;
     text-underline-offset: 3px;
 }
 
-.overview-link {
-    margin-bottom: 30px;
-}
-
+.overview-link,
 .publications-link {
     margin-bottom: 30px;
 }
@@ -319,7 +302,114 @@ a:focus-visible {
 
 
 /* =========================================
-   9. FOOTER
+   9. SHARE SECTION
+========================================= */
+
+.share-section {
+    width: 100%;
+    margin-top: clamp(28px, 3vw, 42px);
+    background: transparent;
+}
+
+.share-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    width: 100%;
+    padding: 0;
+}
+
+.share-inner h2 {
+    margin: 0;
+    color: #777777;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.share-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Consistent sizing and grey appearance for all share icons */
+.share-icon-link img,
+.share-icon-button img {
+    display: block;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.7;
+    transition: opacity 0.15s ease;
+}
+
+.share-icon-link,
+.share-icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+
+    color: #777777;
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    transition:
+        transform 0.15s ease,
+        background-color 0.15s ease;
+}
+
+.share-icon-link:hover,
+.share-icon-button:hover {
+    background: #f5eee9;
+    transform: translateY(-2px);
+}
+
+.share-icon-link:hover img,
+.share-icon-button:hover img {
+    filter: grayscale(1);
+    opacity: 1;
+}
+
+.share-icon-link:focus-visible,
+.share-icon-button:focus-visible {
+    outline: 2px solid #e22450;
+    outline-offset: 3px;
+}
+
+.share-icon-button[hidden] {
+    display: none;
+}
+
+.share-status {
+    flex-basis: 100%;
+    margin: 0;
+    color: #777777;
+    font-size: 0.75rem;
+    text-align: left;
+}
+
+.share-status:empty {
+    display: none;
+}
+
+
+/* =========================================
+   10. FOOTER
 ========================================= */
 
 .site-footer {
@@ -346,7 +436,7 @@ a:focus-visible {
 
 
 /* =========================================
-   10. BASIC NARROW-SCREEN FALLBACK
+   11. MOBILE LAYOUT
 ========================================= */
 
 @media (max-width: 700px) {
@@ -355,53 +445,14 @@ a:focus-visible {
         font-size: 18.4px;
     }
 
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-        padding: 20px;
+    /* Banner */
+
+    .banner {
+        border-top-width: 6px;
+        border-bottom-width: 6px;
     }
 
-    .nav-links {
-        flex-wrap: wrap;
-        gap: 12px 18px;
-    }
-
-    .main-container {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 45px;
-        padding: 40px 20px 55px;
-    }
-
-    .profile-column {
-        text-align: center;
-    }
-
-    .overview-section h1 {
-        font-size: 1.7rem;
-    }
-
-}
-
-/* =========================================
-   11. MOBILE NAVIGATION AND FOLLOW POP-UP
-========================================= */
-
-/* Hidden on desktop */
-.menu-toggle,
-.follow-button,
-.follow-modal-overlay {
-    display: none;
-}
-
-
-/* =========================================
-   MOBILE STYLES
-========================================= */
-
-@media (max-width: 700px) {
-
-    /* Header and hamburger button */
+    /* Navigation header */
 
     .navbar {
         position: relative;
@@ -409,8 +460,9 @@ a:focus-visible {
         align-items: center;
         justify-content: space-between;
         gap: 15px;
-        padding: 18px 20px;
+
         min-height: 76px;
+        padding: 18px 20px;
     }
 
     .site-name {
@@ -419,54 +471,51 @@ a:focus-visible {
     }
 
     .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5.1px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5.1px;
 
-    width: 44px;
-    height: 44px;
-    padding: 0;
-    flex-shrink: 0;
+        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
+        padding: 0;
 
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    appearance: none;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        appearance: none;
 
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-}
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
 
-.menu-toggle span {
-    display: block;
-    width: 20.4px;
-    height: 1.7px;
-    background: #111111;
-    border-radius: 2px;
-}
+    .menu-toggle span {
+        display: block;
+        width: 20.4px;
+        height: 1.7px;
+        background: #111111;
+        border-radius: 2px;
+    }
 
-.menu-toggle:hover,
-.menu-toggle:active {
-    background: transparent;
-    box-shadow: none;
-}
+    .menu-toggle:hover,
+    .menu-toggle:active {
+        background: transparent;
+        box-shadow: none;
+    }
 
-/* Prevent a mouse click from leaving a visible outline */
-.menu-toggle:focus:not(:focus-visible) {
-    outline: none;
-}
+    .menu-toggle:focus:not(:focus-visible) {
+        outline: none;
+    }
 
-/* Keep a focus indicator for keyboard users */
-.menu-toggle:focus-visible {
-    outline: 2px solid #e22450;
-    outline-offset: 4px;
-}
+    .menu-toggle:focus-visible {
+        outline: 2px solid #e22450;
+        outline-offset: 4px;
+    }
 
-
-    /* Navigation pop-up */
+    /* Navigation dropdown */
 
     .nav-links {
         display: none;
@@ -510,16 +559,16 @@ a:focus-visible {
         background: #f5eee9;
     }
 
-    /* Avoid bold text changing the width of menu items */
     .nav-links a::after {
         content: none;
     }
 
+    /* Main content becomes a single column */
 
-    /* Profile and Follow me button */
-
-    .profile-column {
-        text-align: center;
+    .main-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 45px;
+        padding: 0 20px 55px;
     }
 
     .profile-details {
@@ -532,29 +581,30 @@ a:focus-visible {
     }
 
     .profile-title {
-        white-space: normal;
         margin-bottom: 18px;
+        white-space: normal;
     }
 
-    /* Hide the regular social links on the mobile homepage */
+    /* Replace the social list with the Follow me button */
+
     .profile-column > .profile-details > .social-links {
         display: none;
     }
 
     .follow-button {
-        display: inline-block;
+        display: block;
+        width: clamp(124.8px, 50.6%, 250.4px);
         margin: 0 auto 10px;
-        padding: 9px 25px;
+        padding: 9px 12px;
 
         background: #e22450;
         color: #ffffff;
         border: none;
-        border-radius: 6px;
+        border-radius: 3px;
 
         font: inherit;
         font-size: 0.95rem;
         font-weight: 600;
-
         cursor: pointer;
     }
 
@@ -562,66 +612,55 @@ a:focus-visible {
         background: #bd1b40;
     }
 
+    /* Sliding Follow me panel */
 
-    /* =========================================
-   FOLLOW ME: SLIDING LEFT-HAND PANEL
-========================================= */
+    .follow-modal-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
 
-/* Transparent overlay: the homepage remains visible */
-.follow-modal-overlay {
-    display: block;
-    position: fixed;
-    inset: 0;
-    z-index: 2000;
+        background: transparent;
+        visibility: hidden;
+        pointer-events: none;
 
-    background: transparent;
+        transition: visibility 0s linear 0.32s;
+    }
 
-    visibility: hidden;
-    pointer-events: none;
+    .follow-modal-overlay.is-open {
+        visibility: visible;
+        pointer-events: auto;
+        transition: visibility 0s;
+    }
 
-    /* Allow the panel to slide out before hiding the overlay */
-    transition: visibility 0s linear 0.32s;
-}
+    .follow-modal {
+        position: absolute;
+        top: 0;
+        left: 0;
 
-/* Show the overlay without dimming the homepage */
-.follow-modal-overlay.is-open {
-    visibility: visible;
-    pointer-events: auto;
-    transition: visibility 0s;
-}
+        width: 80vw;
+        max-width: none;
+        height: 100vh;
+        height: 100dvh;
+        max-height: none;
 
-/* Panel slides in from the left */
-.follow-modal {
-    position: absolute;
-    top: 0;
-    left: 0;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        padding: 40px 18px 24px;
 
-    width: 80vw;
-    max-width: none;
-    height: 100vh;
-    height: 100dvh;
-    max-height: none;
+        background: #fffcf7;
+        border-radius: 0;
+        box-shadow: 8px 0 24px rgb(0 0 0 / 12%);
 
-    overflow-y: auto;
-    overscroll-behavior: contain;
+        text-align: center;
 
-    padding: 40px 18px 24px;
+        transform: translateX(-100%);
+        transition: transform 0.32s ease;
+    }
 
-    background: #fffcf7;
-    border-radius: 0;
-    box-shadow: 8px 0 24px rgb(0 0 0 / 12%);
-
-    text-align: center;
-
-    /* Start just outside the left edge */
-    transform: translateX(-100%);
-    transition: transform 0.32s ease;
-}
-
-/* Slide into view when Follow me is pressed */
-.follow-modal-overlay.is-open .follow-modal {
-    transform: translateX(0);
-}
+    .follow-modal-overlay.is-open .follow-modal {
+        transform: translateX(0);
+    }
 
     .follow-modal-close {
         position: absolute;
@@ -645,27 +684,23 @@ a:focus-visible {
         color: #e22450;
     }
 
+    .follow-modal-image {
+        display: block;
+        width: 145px;
+        height: 145px;
+        margin: 4px auto 12px;
 
-.follow-modal-image {
-    display: block;
-    width: 145px;
-    height: 145px;
-    margin: 4px auto 12px;
+        object-fit: cover;
+        border-radius: 50%;
 
-    object-fit: cover;
-    border: 0px solid #ffffff;
-    border-radius: 50%;
-
-       /* Subtle 3D lift */
-    box-shadow:
-        0 5px 10px rgba(0, 0, 0, 0.12),
-        0 2px 4px rgba(0, 0, 0, 0.08);
-}
-
+        box-shadow:
+            0 5px 10px rgba(0, 0, 0, 0.12),
+            0 2px 4px rgba(0, 0, 0, 0.08);
+    }
 
     .follow-modal-name {
         margin: 0;
-        font-size: 1.05rem;
+        font-size: 1rem;
         font-weight: 700;
         line-height: 1.35;
         overflow-wrap: anywhere;
@@ -682,6 +717,7 @@ a:focus-visible {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+
         width: fit-content;
         max-width: 100%;
         margin: 0 auto;
@@ -694,7 +730,7 @@ a:focus-visible {
 
     .follow-modal-social-links a {
         gap: 7px;
-        font-size: 0.82rem;
+        font-size: 0.8rem;
     }
 
     .follow-modal-social-links .social-icon {
@@ -702,213 +738,7 @@ a:focus-visible {
         height: 22px;
     }
 
-}
-
-
-/* Very narrow phones */
-
-@media (max-width: 360px) {
-
-    .follow-modal {
-        width: 80vw;
-        padding-right: 14px;
-        padding-left: 14px;
-    }
-
-}
-
-/* =========================================
-   MOBILE: PROFILE IMAGE OVERLAP AND BUTTON
-========================================= */
-
-@media (max-width: 700px) {
-
-    /* Allow the profile image to overlap the banner */
-    .main-container {
-        padding-top: 0;
-    }
-
-    /* profile image with white border */
-    .profile-image {
-        width: clamp(156px, 63.25%, 313px);
-        height: auto;
-        aspect-ratio: 1 / 1;
-
-        object-fit: cover;
-        border: 5px solid #ffffff;
-        border-radius: 50%;
-
-        /* Overlap the banner by approximately 15% of image height */
-        margin: clamp(-47.15px, -8.625vw, -26.45px) auto 25px;
-    }
-
-    /* Follow me button: 20% narrower than the profile image */
-    .follow-button {
-        display: block;
-        width: clamp(124.8px, 50.6%, 250.4px);
-        margin: 0 auto 10px;
-        padding: 9px 12px;
-
-        border-radius: 3px;
-    }
-
-}
-
-
-/* =========================================
-   MOBILE: INCREASE FOLLOW PANEL TEXT SIZE
-========================================= */
-
-@media (max-width: 700px) {
-
-    /* Your name */
-    .follow-modal-name {
-        font-size: 1.0rem;
-    }
-
-    /* Biomedical Researcher */
-    .follow-modal-title {
-        font-size: 0.9rem;
-    }
-
-    /* Social media link labels */
-    .follow-modal-social-links a {
-        font-size: 0.8rem;
-    }
-
-}
-
-
-/* =========================================
-   SHARE THIS PAGE
-========================================= */
-
-
-/* =========================================
-   SHARE THIS PAGE
-========================================= */
-
-.share-section {
-    width: 100%;
-    margin-top: clamp(28px, 3vw, 42px);
-
-    /* No divider or separate background */
-    border: none;
-    background: transparent;
-}
-
-.share-inner {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 12px;
-
-    width: 100%;
-    padding: 0;
-}
-
-/* Grey Share label */
-.share-inner h2 {
-    margin: 0;
-    color: #777777;
-    font-size: 0.9rem;
-    font-weight: 600;
-    line-height: 1.4;
-}
-
-.share-links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-/* Consistent size for all six share icons */
-.share-icon-link img,
-.share-icon-button img {
-    display: block;
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-
-    /* Render the icons in grey tones */
-    filter: grayscale(1);
-    opacity: 0.7;
-    transition: opacity 0.15s ease;
-}
-
-.share-icon-link,
-.share-icon-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 36px;
-    height: 36px;
-    padding: 4px;
-
-    color: #777777;
-    background: transparent;
-    border: none;
-    border-radius: 5px;
-
-    cursor: pointer;
-    text-decoration: none;
-
-    transition: transform 0.15s ease,
-                background-color 0.15s ease;
-}
-
-.share-icon-link:hover,
-.share-icon-button:hover {
-    background: #f5eee9;
-    transform: translateY(-2px);
-}
-
-.share-icon-link:hover img,
-.share-icon-button:hover img {
-    opacity: 1;
-    filter: grayscale(1);
-}
-
-.share-icon-link:focus-visible,
-.share-icon-button:focus-visible {
-    outline: 2px solid #e22450;
-    outline-offset: 3px;
-}
-
-.share-icon-button[hidden] {
-    display: none;
-}
-
-.share-status {
-    flex-basis: 100%;
-    margin: 0;
-    color: #777777;
-    font-size: 0.75rem;
-    text-align: left;
-}
-
-.share-status:empty {
-    display: none;
-}
-
-/* Mobile layout */
-@media (max-width: 700px) {
-    .share-inner {
-        gap: 10px;
-    }
-
-    .share-links {
-        gap: 8px;
-    }
-}
-
-
-/* Mobile layout */
-@media (max-width: 700px) {
+    /* Share section */
 
     .share-inner {
         gap: 12px;
@@ -917,6 +747,21 @@ a:focus-visible {
 
     .share-links {
         gap: 10px;
+    }
+
+}
+
+
+/* =========================================
+   12. VERY NARROW PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .follow-modal {
+        width: 80vw;
+        padding-right: 14px;
+        padding-left: 14px;
     }
 
 }
