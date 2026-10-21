@@ -753,3 +753,28 @@ a:focus-visible {
     }
 
 }
+
+
+/* =========================================
+   MOBILE: INCREASE FOLLOW PANEL TEXT SIZE
+========================================= */
+
+@media (max-width: 700px) {
+
+    /* Your name */
+    .follow-modal-name {
+        font-size: 1.21rem;
+    }
+
+    /* Biomedical Researcher */
+    .follow-modal-title {
+        font-size: 1.04rem;
+    }
+
+    /* Social media link labels */
+    .follow-modal-social-links a {
+        font-size: 0.94rem;
+    }
+
+}
+
