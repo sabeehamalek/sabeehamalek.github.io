@@ -10,9 +10,9 @@
 html {
     scroll-behavior: smooth;
     font-size: clamp(
-        1.22rem,
-        calc(0.8625rem + 0.575vw),
-        1.58rem
+        1rem,
+        calc(0.75rem + 0.7vw),
+        1.45rem
     );
 }
 
@@ -51,7 +51,7 @@ a:focus-visible {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: clamp(18px, 2vw, 40px);
+    gap: clamp(8px, 1.5vw, 32px);
 
     width: 100%;
     max-width: none;
@@ -69,7 +69,7 @@ a:focus-visible {
 
 .site-name {
     color: #111111;
-    font-size: 1.3rem;
+    font-size: clamp(1rem, calc(0.6rem + 1vw), 1.3rem);
     font-weight: 700;
     text-decoration: none;
     white-space: nowrap;
@@ -83,7 +83,7 @@ a:focus-visible {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 12px clamp(10px, 1.25vw, 24px);
+    gap: 8px clamp(6px, 1vw, 18px);
 
     margin: 0;
     padding: 0;
@@ -93,7 +93,7 @@ a:focus-visible {
 .nav-links a {
     position: relative;
     color: #111111;
-    font-size: 0.95rem;
+    font-size: clamp(0.82rem, calc(0.55rem + 0.8vw), 0.95rem);
     font-weight: 500;
     text-decoration: none;
 }
@@ -796,4 +796,36 @@ a:focus-visible {
         padding-left: 14px;
     }
 
+}
+
+/* =========================================
+   13. RESPONSIVE DESKTOP AND TABLET ICONS
+========================================= */
+
+@media (min-width: 701px) {
+
+    /* Social and academic icons */
+    .social-icon {
+        width: clamp(18px, 1.8vw, 26px);
+        height: clamp(18px, 1.8vw, 26px);
+    }
+
+    /* Icons in the share section */
+    .share-icon-link img,
+    .share-icon-button img {
+        width: clamp(16px, 1.53vw, 22px);
+        height: clamp(16px, 1.53vw, 22px);
+    }
+
+    /* Clickable areas around share icons */
+    .share-icon-link,
+    .share-icon-button {
+        width: clamp(24px, 1.95vw, 28px);
+        height: clamp(24px, 1.95vw, 28px);
+    }
+
+    /* Reduce the gap between social icons and their labels */
+    .social-links a {
+        gap: clamp(5px, 0.6vw, 9px);
+    }
 }
