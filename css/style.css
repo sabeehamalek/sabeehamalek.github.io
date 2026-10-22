@@ -82,7 +82,7 @@ a:focus-visible {
 .nav-links {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 12px clamp(10px, 1.25vw, 24px);
 
     margin: 0;
@@ -796,4 +796,113 @@ a:focus-visible {
         padding-left: 14px;
     }
 
+}
+
+/* =========================================
+   13. TABLET NAVIGATION
+   Hamburger menu for widths 701px–1050px
+========================================= */
+
+@media (min-width: 701px) and (max-width: 1050px) {
+
+    /* Position the dropdown relative to the navigation bar */
+    .navbar {
+        position: relative;
+    }
+
+    /* Show the hamburger button */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5.1px;
+
+        flex-shrink: 0;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        appearance: none;
+
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Draw the three lines of the hamburger icon */
+    .menu-toggle span {
+        display: block;
+        width: 20.4px;
+        height: 1.7px;
+        background: #111111;
+        border-radius: 2px;
+    }
+
+    .menu-toggle:hover,
+    .menu-toggle:active {
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .menu-toggle:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    .menu-toggle:focus-visible {
+        outline: 2px solid #e22450;
+        outline-offset: 4px;
+    }
+
+    /* Hide the navigation links until the menu is opened */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 12px;
+        z-index: 1000;
+
+        flex-direction: column;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        gap: 0;
+
+        width: min(260px, calc(100vw - 24px));
+        margin: 0;
+        padding: 8px 0;
+
+        background: #fffcf7;
+        border: 1px solid #e8e0d6;
+        border-radius: 8px;
+        box-shadow: 0 8px 24px rgb(0 0 0 / 14%);
+    }
+
+    /* Show the dropdown when the menu is opened */
+    .navbar.menu-open .nav-links {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 11px 18px;
+        font-size: 1rem;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        background: #f5eee9;
+    }
+
+    /* Disable the invisible text copy used by the desktop links */
+    .nav-links a::after {
+        content: none;
+    }
 }
