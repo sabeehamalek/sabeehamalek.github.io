@@ -787,9 +787,9 @@ a:focus-visible {
     align-items: center;
     justify-content: center;
 
-    flex: 0 0 42px;
-    width: 42px;
-    min-height: 36px;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
 
     background: #777777;
     border-radius: 3px;
@@ -798,8 +798,8 @@ a:focus-visible {
 /* White icon inside the grey box */
 .follow-modal-social-links .social-icon {
     display: block;
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
 
     filter: grayscale(1) brightness(0) invert(1);
