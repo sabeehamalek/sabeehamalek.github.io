@@ -739,7 +739,7 @@ a:focus-visible {
 
     .follow-modal-name {
         margin: 0;
-        font-size: 1rem;
+        font-size: 1.1rem;
         font-weight: 700;
         line-height: 1.35;
         overflow-wrap: anywhere;
@@ -748,7 +748,7 @@ a:focus-visible {
     .follow-modal-title {
         margin: 5px 0 18px;
         color: #555555;
-        font-size: 0.9rem;
+        font-size: 1.0rem;
         line-height: 1.4;
     }
 
@@ -768,13 +768,13 @@ a:focus-visible {
     }
 
     .follow-modal-social-links a {
-        gap: 7px;
-        font-size: 0.8rem;
+        gap: 9px;
+        font-size: 0.9rem;
     }
 
     .follow-modal-social-links .social-icon {
-        width: 22px;
-        height: 22px;
+        width: 23px;
+        height: 23px;
     }
 
     /* Share section */
@@ -833,8 +833,8 @@ a:focus-visible {
 
     /* Reduce the gap between social icons and their labels */
     .social-links a {
-        gap: clamp(5px, 0.6vw, 9px);
-    }
+    gap: clamp(8px, 0.7vw, 11px);
+   }
 }
 
 /* =========================================
