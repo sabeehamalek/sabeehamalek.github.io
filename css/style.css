@@ -395,7 +395,7 @@ a:focus-visible {
 
 .share-icon-link:hover,
 .share-icon-button:hover {
-    background: #f5eee9;
+    background: #f0f0f0;
     transform: translateY(-2px);
 }
 
@@ -580,7 +580,7 @@ a:focus-visible {
 
     .nav-links a:hover,
     .nav-links a.active {
-        background: #f5eee9;
+        background: #f0f0f0;
     }
 
     .nav-links a::after {
@@ -1043,7 +1043,7 @@ a:focus-visible {
 
     .navbar.nav-needs-toggle .nav-links a:hover,
     .navbar.nav-needs-toggle .nav-links a.active {
-        background: #f5eee9;
+        background: #f0f0f0;
     }
 
     .navbar.nav-needs-toggle .nav-links a::after {
