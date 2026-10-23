@@ -617,5 +617,62 @@ document.addEventListener("DOMContentLoaded", function () {
 })();
 </script>
 
+<!-- Automatically switch to hamburger navigation when links wrap -->
+<script>
+    <script>
+(() => {
+    const navbar = document.querySelector(".navbar");
+    const navLinks = navbar?.querySelector(".nav-links");
+
+    if (!navbar || !navLinks) return;
+
+    const mobileQuery = window.matchMedia("(max-width: 700px)");
+
+    function updateNavigationMode() {
+        /* Let the existing mobile CSS handle mobile screens */
+        if (mobileQuery.matches) {
+            navbar.classList.remove("nav-needs-toggle");
+            return;
+        }
+
+        /*
+         * Temporarily restore the horizontal links so we can
+         * check whether they occupy more than one row.
+         */
+        navbar.classList.remove("nav-needs-toggle");
+
+        const items = Array.from(navLinks.children);
+
+        if (items.length < 2) return;
+
+        const firstRowTop = items[0].getBoundingClientRect().top;
+
+        const linksHaveWrapped = items.some(item =>
+            Math.abs(
+                item.getBoundingClientRect().top - firstRowTop
+            ) > 2
+        );
+
+        /* Use hamburger mode only when the links have wrapped */
+        navbar.classList.toggle(
+            "nav-needs-toggle",
+            linksHaveWrapped
+        );
+    }
+
+    /* Recheck on initial load and whenever the viewport changes */
+    updateNavigationMode();
+
+    window.addEventListener("resize", updateNavigationMode);
+    window.addEventListener("load", updateNavigationMode);
+
+    /* Recheck after the website's fonts have finished loading */
+    if (document.fonts?.ready) {
+        document.fonts.ready.then(updateNavigationMode);
+    }
+})();
+</script>
+</script>
+
 </body>
 </html>
