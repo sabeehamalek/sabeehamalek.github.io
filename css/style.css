@@ -240,7 +240,7 @@ a:focus-visible {
     display: inline-flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 9px;
+    gap: 12px;
 
     color: #e22450;
     font-size: 0.95rem;
@@ -832,7 +832,7 @@ a:focus-visible {
 
     /* Reduce the gap between social icons and their labels */
     .social-links a {
-    gap: clamp(8px, 0.7vw, 11px);
+    gap: 12; /*clamp(8px, 0.7vw, 11px);*/
    }
 }
 
