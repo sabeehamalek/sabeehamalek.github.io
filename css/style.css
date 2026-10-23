@@ -376,8 +376,8 @@ a:focus-visible {
     align-items: center;
     justify-content: center;
 
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 28px;
     padding: 3px;
 
     color: #777777;
@@ -826,9 +826,14 @@ a:focus-visible {
     /* Clickable areas around share icons */
     .share-icon-link,
     .share-icon-button {
+        width: clamp(30px, 1.95vw, 36px);
+        height: clamp(30px, 1.95vw, 36px);
+    }
+
+   /*     .share-icon-button {
         width: clamp(24px, 1.95vw, 28px);
         height: clamp(24px, 1.95vw, 28px);
-    }
+    }*/
 
     /* Reduce the gap between social icons and their labels */
     .social-links a {
