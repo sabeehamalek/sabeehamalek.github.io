@@ -798,8 +798,8 @@ a:focus-visible {
 /* White icon inside the grey box */
 .follow-modal-social-links .social-icon {
     display: block;
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
 
     filter: grayscale(1) brightness(0) invert(1);
