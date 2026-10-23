@@ -602,7 +602,7 @@ a:focus-visible {
     aspect-ratio: 1 / 1;
 
     object-fit: cover;
-    border: 5px solid #F0F0F0;
+    border: 5px solid #f0f0f0;
     border-radius: 50%;
 
     /* Overlap the banner by approximately 15% of image height */
@@ -751,104 +751,30 @@ a:focus-visible {
         line-height: 1.4;
     }
 
-   /* Social media links styled as buttons in the Follow me panel */
+    .follow-modal-social-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
 
-/* Social media links in the Follow me panel */
+        width: fit-content;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: left;
+    }
 
-.follow-modal-social-links {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    .follow-modal-social-links li {
+        margin: 7px 0;
+    }
 
-    width: 80%;
-    max-width: 208px;
-    margin: 0 auto;
-    padding: 0;
-    gap: 16px;
+    .follow-modal-social-links a {
+        gap: 9px;
+        font-size: 0.9rem;
+    }
 
-    list-style: none;
-}
-
-/* Each row contains a grey icon box and a red link */
-.follow-modal-social-links li {
-    display: flex;
-    align-items: stretch;
-    gap: 8px;
-
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-/* Grey, non-clickable icon box */
-.follow-modal-icon-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex: 0 0 36px;
-    width: 36px;
-    height: 36px;
-
-    background: #777777;
-    border-radius: 3px;
-}
-
-/* White icon inside the grey box */
-.follow-modal-social-links .social-icon {
-    display: block;
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-
-    filter: grayscale(1) brightness(0) invert(1);
-    opacity: 1;
-}
-
-/* Red, clickable social media link */
-.follow-modal-social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex: 1 1 0;
-    min-width: 0;
-    min-height: 36px;
-    padding: 8px 12px;
-
-    background: #e22450;
-    color: #ffffff;
-    border: none;
-    border-radius: 3px;
-
-    font-size: 0.85rem;
-    font-weight: 600;
-    line-height: 1.2;
-    text-align: center;
-    text-decoration: none;
-}
-
-/* Keep link text white and without an underline */
-.follow-modal-social-links a span {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-/* Hover effect applies only to the red clickable section */
-.follow-modal-social-links a:hover {
-    background: #bd1b40;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.follow-modal-social-links a:hover span {
-    text-decoration: none;
-}
-
-.follow-modal-social-links a:focus-visible {
-    outline: 2px solid #e22450;
-    outline-offset: 3px;
-}
+    .follow-modal-social-links .social-icon {
+        width: 23px;
+        height: 23px;
+    }
 
     /* Share section */
 
