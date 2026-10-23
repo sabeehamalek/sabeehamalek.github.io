@@ -752,39 +752,36 @@ a:focus-visible {
         line-height: 1.4;
     }
 
-  /* Social links in the Follow me panel */
+   /* Social media links styled as buttons in the Follow me panel */
 
 .follow-modal-social-links {
     display: flex;
     flex-direction: column;
     align-items: stretch;
 
-    width: 100%;
-    max-width: 290px;
+    width: 80%;
+    max-width: 208px;
     margin: 0 auto;
     padding: 0;
-    gap: 8px;
+    gap: 16px;
 
-    list-style: none;
-    text-align: center;
+    text-align: left;
 }
 
 .follow-modal-social-links li {
     width: 100%;
     margin: 0;
-    padding-left: 30px;
 }
 
-/* Red buttons with centred white text */
 .follow-modal-social-links a {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
     width: 100%;
     min-height: 42px;
-    padding: 10px 12px;
+    padding: 10px 40px;
     box-sizing: border-box;
 
     background: #e22450;
@@ -795,40 +792,25 @@ a:focus-visible {
     font-size: 0.85rem;
     font-weight: 600;
     line-height: 1.2;
+    text-align: left;
     text-decoration: none;
 }
 
-/* Keep the link text centred and remove its underline */
+/* Remove the existing underline from the link text */
 .follow-modal-social-links a span {
     text-decoration: none;
 }
 
-/* Position the existing grey icon outside the red button */
+/* Keep each icon on the left without shifting the centred text */
 .follow-modal-social-links .social-icon {
     position: absolute;
-    left: -30px;
+    left: 12px;
 
     width: 20px;
     height: 20px;
 
-    filter: grayscale(1);
-    opacity: 0.75;
-}
-
-/* Button hover and keyboard focus */
-.follow-modal-social-links a:hover {
-    background: #bd1b40;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.follow-modal-social-links a:hover span {
-    text-decoration: none;
-}
-
-.follow-modal-social-links a:focus-visible {
-    outline: 2px solid #e22450;
-    outline-offset: 3px;
+    filter: grayscale(1) brightness(0) invert(1);
+    opacity: 1;
 }
 
 /* Hover and keyboard focus */
