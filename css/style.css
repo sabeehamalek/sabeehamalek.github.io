@@ -789,7 +789,7 @@ a:focus-visible {
 
     flex: 0 0 42px;
     width: 42px;
-    min-height: 42px;
+    min-height: 36px;
 
     background: #777777;
     border-radius: 3px;
@@ -798,8 +798,8 @@ a:focus-visible {
 /* White icon inside the grey box */
 .follow-modal-social-links .social-icon {
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
 
     filter: grayscale(1) brightness(0) invert(1);
@@ -810,12 +810,12 @@ a:focus-visible {
 .follow-modal-social-links a {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
     flex: 1 1 0;
     min-width: 0;
-    min-height: 42px;
-    padding: 10px 12px;
+    min-height: 36px;
+    padding: 8px 12px;
 
     background: #e22450;
     color: #ffffff;
@@ -825,7 +825,7 @@ a:focus-visible {
     font-size: 0.85rem;
     font-weight: 600;
     line-height: 1.2;
-    text-align: left;
+    text-align: center;
     text-decoration: none;
 }
 
