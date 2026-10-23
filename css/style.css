@@ -435,7 +435,6 @@ a:focus-visible {
 .site-footer {
     width: 100%;
     background: #f0f0f0;
-    border-top: 1px solid #e8e0d6;
 }
 
 .site-footer-inner {
@@ -603,7 +602,7 @@ a:focus-visible {
     aspect-ratio: 1 / 1;
 
     object-fit: cover;
-    border: 5px solid #FFFCF7;
+    border: 5px solid #F0F0F0;
     border-radius: 50%;
 
     /* Overlap the banner by approximately 15% of image height */
