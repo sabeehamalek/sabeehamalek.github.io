@@ -352,7 +352,7 @@ a:focus-visible {
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 7px;
 }
 
 /* Consistent sizing for all share icons */
@@ -826,8 +826,8 @@ a:focus-visible {
     /* Clickable areas around share icons */
     .share-icon-link,
     .share-icon-button {
-        width: clamp(30px, 2.2vw, 36px);
-        height: clamp(30px, 2.2vw, 36px);
+        width: clamp(28px, 2.1vw, 32px);
+        height: clamp(28px, 2.1vw, 32px);
     }
 
    /*     .share-icon-button {
