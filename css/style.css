@@ -89,7 +89,6 @@ a:focus-visible {
 
 .nav-links a:hover {
     color: #e22450;
-    font-weight: 500;
 }
 
 .nav-links a.active {
@@ -255,16 +254,12 @@ a:focus-visible {
 .publications-link {
     display: inline-block;
     margin-top: 5px;
+    margin-bottom: 30px;
     color: #e22450;
     font-size: 1rem;
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 3px;
-}
-
-.overview-link,
-.publications-link {
-    margin-bottom: 30px;
 }
 
 .overview-link:hover,
@@ -314,7 +309,6 @@ a:focus-visible {
     object-fit: contain;
     filter: none;
     opacity: 1;
-    transition: opacity 0.15s ease;
 }
 
 .share-icon-link,
@@ -340,12 +334,6 @@ a:focus-visible {
 .share-icon-button:hover {
     background: #f0f0f0;
     transform: translateY(-2px);
-}
-
-.share-icon-link:hover img,
-.share-icon-button:hover img {
-    filter: none;
-    opacity: 1;
 }
 
 .share-icon-link:focus-visible,
@@ -686,7 +674,6 @@ a:focus-visible {
 
 @media (max-width: 360px) {
     .follow-modal {
-        width: 80vw;
         padding-right: 14px;
         padding-left: 14px;
     }
@@ -712,13 +699,9 @@ a:focus-visible {
         width: clamp(28px, 2.1vw, 32px);
         height: clamp(28px, 2.1vw, 32px);
     }
-
-    .social-links a {
-    gap: 12;
-   }
 }
 
-/* ======= 13. DESKTOP AND TABLET NAVIGATION ======= */
+/* ======= 14. DESKTOP AND TABLET NAVIGATION ======= */
 
 @media (min-width: 701px) {
     .navbar {
@@ -739,7 +722,7 @@ a:focus-visible {
         gap: 12px clamp(10px, 1.25vw, 24px);
     }
 
-    /* ======= HAMBURGER MODE: activate only when links wrap onto more than one row ======= */
+    /* ======= 15. HAMBURGER MODE: activate only when links wrap onto more than one row ======= */
 
     .navbar.nav-needs-toggle {
         display: flex;
