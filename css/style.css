@@ -633,7 +633,7 @@ a:focus-visible {
         display: block;
         /*width: clamp(124.8px, 50.6%, 250.4px);   old   */ 
         /*width: clamp(106.1px, 43%, 212.8px);   new original  */
-        width: clamp(106px, 43%, 213px);     /* new edited */
+        width: clamp(95px, 40%, 200px);     /* new edited */
         margin: 0 auto 10px;
         padding: 9px 12px;
 
