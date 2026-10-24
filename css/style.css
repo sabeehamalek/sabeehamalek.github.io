@@ -1,4 +1,5 @@
-/* ====== 1. BASE STYLES ======= */
+
+/* ======= 1. BASE STYLES ======= */
 
 * {
     box-sizing: border-box;
@@ -21,6 +22,7 @@ a:focus-visible {
     outline: 2px solid #e22450;
     outline-offset: 4px;
 }
+
 
 /* ======= 2. NAVIGATION ======= */
 
@@ -92,6 +94,7 @@ a:focus-visible {
     display: none;
 }
 
+
 /* ======= 3. RESPONSIVE BANNER ======= */
 
 .banner {
@@ -111,6 +114,7 @@ a:focus-visible {
     height: auto;
 }
 
+
 /* ======= 4. MAIN LAYOUT ======= */
 
 .main-container {
@@ -118,10 +122,8 @@ a:focus-visible {
     grid-template-columns:
         minmax(0, 0.4fr)
         minmax(0, 1fr);
-
     align-items: start;
     gap: clamp(28px, 3vw, 70px);
-
     width: 100%;
     max-width: none;
     margin: 0;
@@ -130,6 +132,7 @@ a:focus-visible {
         clamp(20px, 2.5vw, 48px)
         clamp(50px, 5vw, 90px);
 }
+
 
 /* ======= 5. PROFILE COLUMN ======= */
 
@@ -173,6 +176,7 @@ a:focus-visible {
     font-size: 1rem;
     white-space: nowrap;
 }
+
 
 /* ======= 6. SOCIAL AND ACADEMIC LINKS ======= */
 
@@ -237,6 +241,7 @@ a:focus-visible {
     margin: 0 0 22px;
 }
 
+
 /* ======= 8. CONTENT LINKS ======= */
 
 .overview-link,
@@ -255,6 +260,7 @@ a:focus-visible {
 .publications-link:hover {
     text-decoration-thickness: 2px;
 }
+
 
 /* ======= 9. SHARE SECTION ======= */
 
@@ -345,6 +351,7 @@ a:focus-visible {
     display: none;
 }
 
+
 /* ======= 10. FOOTER ======= */
 
 .site-footer {
@@ -367,6 +374,7 @@ a:focus-visible {
     font-size: 0.72rem;
 }
 
+
 /* ======= 11. MOBILE LAYOUT ======= */
 
 @media (max-width: 700px) {
@@ -374,13 +382,13 @@ a:focus-visible {
         font-size: 18.4px;
     }
 
-.site-header {
-    border-bottom-width: 6px;
-}
+    .site-header {
+        border-bottom-width: 6px;
+    }
 
-.banner {
-    border-bottom-width: 6px;
-}
+    .banner {
+        border-bottom-width: 6px;
+    }
 
     .navbar {
         position: relative;
@@ -478,22 +486,22 @@ a:focus-visible {
         background: #f0f0f0;
     }
 
-.main-container {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 45px;
-    padding: 0 20px 55px;
-}
+    .main-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 45px;
+        padding: 0 20px 55px;
+    }
 
-.profile-image {
-    display: block;
-    width: clamp(156px, 63.25%, 313px);
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border: 5px solid #f0f0f0;
-    border-radius: 50%;
-    margin: clamp(-47.15px, -8.625vw, -26.45px) auto 25px;
-}
+    .profile-image {
+        display: block;
+        width: clamp(156px, 63.25%, 313px);
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border: 5px solid #f0f0f0;
+        border-radius: 50%;
+        margin: clamp(-47.15px, -8.625vw, -26.45px) auto 25px;
+    }
 
     .profile-details {
         display: block;
@@ -653,6 +661,7 @@ a:focus-visible {
     }
 }
 
+
 /* ======= 12. VERY NARROW PHONES ======= */
 
 @media (max-width: 360px) {
@@ -662,10 +671,10 @@ a:focus-visible {
     }
 }
 
+
 /* ======= 13. RESPONSIVE DESKTOP AND TABLET ICONS ======= */
 
 @media (min-width: 701px) {
-
     .social-icon {
         width: clamp(18px, 1.8vw, 26px);
         height: clamp(18px, 1.8vw, 26px);
@@ -683,6 +692,7 @@ a:focus-visible {
         height: clamp(28px, 2.1vw, 32px);
     }
 }
+
 
 /* ======= 14. DESKTOP AND TABLET NAVIGATION ======= */
 
@@ -705,8 +715,8 @@ a:focus-visible {
         gap: 12px clamp(10px, 1.25vw, 24px);
     }
 
-    /* ======= Hamburger mode: activate only when links wrap onto more than one row ======= */
-    
+    /* Hamburger mode: activate only when links wrap onto more than one row */
+
     .navbar.nav-needs-toggle {
         display: flex;
         align-items: center;
