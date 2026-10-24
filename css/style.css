@@ -70,22 +70,12 @@ a:focus-visible {
 }
 
 .nav-links a {
-    position: relative;
+    /* position: relative; */
     color: #111111;
     font-size: clamp(0.82rem, calc(0.55rem + 0.8vw), 0.95rem);
     font-weight: 500;
     text-decoration: none;
 }
-
-/* Invisible text copy to reserve space in navigation links */
-/* .nav-links a::after {
-    content: attr(data-text);
-    display: block;
-    height: 0;
-    overflow: hidden;
-    visibility: hidden;
-    font-weight: 500;
-} */
 
 .nav-links a:hover {
     color: #e22450;
@@ -307,8 +297,6 @@ a:focus-visible {
     width: 22px;
     height: 22px;
     object-fit: contain;
-    filter: none;
-    opacity: 1;
 }
 
 .share-icon-link,
@@ -489,10 +477,6 @@ a:focus-visible {
     .nav-links a:hover,
     .nav-links a.active {
         background: #f0f0f0;
-    }
-
-    .nav-links a::after {
-        content: none;
     }
 
 .main-container {
@@ -722,8 +706,8 @@ a:focus-visible {
         gap: 12px clamp(10px, 1.25vw, 24px);
     }
 
-    /* ======= 15. HAMBURGER MODE: activate only when links wrap onto more than one row ======= */
-
+    /* ======= Hamburger mode: activate only when links wrap onto more than one row ======= */
+    
     .navbar.nav-needs-toggle {
         display: flex;
         align-items: center;
@@ -812,9 +796,5 @@ a:focus-visible {
     .navbar.nav-needs-toggle .nav-links a:hover,
     .navbar.nav-needs-toggle .nav-links a.active {
         background: #f0f0f0;
-    }
-
-    .navbar.nav-needs-toggle .nav-links a::after {
-        content: none;
     }
 }
