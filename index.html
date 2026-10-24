@@ -224,97 +224,101 @@
                 View my publications →
             </a>
 
+
             <!-- Share this page -->
-<section class="share-section" aria-label="Share this page">
-    <div class="share-inner">
+            <section class="share-section" aria-label="Share this page">
+                <div class="share-inner">
 
-        <h2>Share</h2>
+                    <h2>Share</h2>
 
-        <div class="share-links">
+                    <div class="share-links">
 
-            <!-- 1. Native share -->
-            <button
-                type="button"
-                class="share-icon-button"
-                data-share-action="native"
-                aria-label="Share this page"
-                title="Share this page"
-            >
-                <img src="images/icons/share.svg" alt="">
-            </button>
+                        <!-- 1. Native share -->
+                        <button
+                            type="button"
+                            class="share-icon-button"
+                            data-share-action="native"
+                            aria-label="Share this page"
+                            title="Share this page"
+                        >
+                            <img src="images/icons/share.svg" alt="">
+                        </button>
 
-            <!-- 2. LinkedIn -->
-            <a
-                href="#"
-                class="share-icon-link"
-                data-share-link="linkedin"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Share on LinkedIn"
-                title="Share on LinkedIn"
-            >
-                <img src="images/icons/linkedin.svg" alt="">
-            </a>
+                        <!-- 2. LinkedIn -->
+                        <a
+                            href="#"
+                            class="share-icon-link"
+                            data-share-link="linkedin"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Share on LinkedIn"
+                            title="Share on LinkedIn"
+                        >
+                            <img src="images/icons/linkedin.svg" alt="">
+                        </a>
 
-            <!-- 3. Bluesky -->
-            <a
-                href="#"
-                class="share-icon-link"
-                data-share-link="bluesky"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Share on Bluesky"
-                title="Share on Bluesky"
-            >
-                <img src="images/icons/bluesky.svg" alt="">
-            </a>
+                        <!-- 3. Bluesky -->
+                        <a
+                            href="#"
+                            class="share-icon-link"
+                            data-share-link="bluesky"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Share on Bluesky"
+                            title="Share on Bluesky"
+                        >
+                            <img src="images/icons/bluesky.svg" alt="">
+                        </a>
 
-            <!-- 4. twitter/X -->
-            <a
-                href="#"
-                class="share-icon-link"
-                data-share-link="x"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Share on X"
-                title="Share on X"
-            >
-                <img src="images/icons/x.svg" alt="">
-            </a>
+                        <!-- 4. X -->
+                        <a
+                            href="#"
+                            class="share-icon-link"
+                            data-share-link="x"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Share on X"
+                            title="Share on X"
+                        >
+                            <img src="images/icons/x.svg" alt="">
+                        </a>
 
-            <!-- 5. Facebook -->
-            <a
-                href="#"
-                class="share-icon-link"
-                data-share-link="facebook"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Share on Facebook"
-                title="Share on Facebook"
-            >
-                <img src="images/icons/facebook.svg" alt="">
-            </a>
+                        <!-- 5. Facebook -->
+                        <a
+                            href="#"
+                            class="share-icon-link"
+                            data-share-link="facebook"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Share on Facebook"
+                            title="Share on Facebook"
+                        >
+                            <img src="images/icons/facebook.svg" alt="">
+                        </a>
 
-            <!-- 6. Email -->
-            <a
-                href="#"
-                class="share-icon-link"
-                data-share-link="email"
-                aria-label="Share this page by email"
-                title="Share by email"
-            >
-                <img src="images/icons/email.svg" alt="">
-            </a>
+                        <!-- 6. Email -->
+                        <a
+                            href="#"
+                            class="share-icon-link"
+                            data-share-link="email"
+                            aria-label="Share this page by email"
+                            title="Share by email"
+                        >
+                            <img src="images/icons/email.svg" alt="">
+                        </a>
 
-        </div>
+                    </div>
 
-        <p class="share-status"
-           id="share-status"
-           role="status"></p>
+                    <p
+                        class="share-status"
+                        id="share-status"
+                        role="status"
+                    ></p>
 
-    </div>
-</section>
+                </div>
+            </section>
         </section>
+
 
     </main>
 
@@ -437,7 +441,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const followModal = document.getElementById("follow-modal");
     const closeFollowModal = document.getElementById("follow-modal-close");
 
-    /* Open and close the mobile navigation menu */
+    /* Open and close the hamburger navigation menu */
 
     function closeMenu() {
         navbar.classList.remove("menu-open");
@@ -663,9 +667,28 @@ document.addEventListener("keydown", function (event) {
     function updateNavigationMode() {
         /* Let the existing mobile CSS handle mobile screens */
         if (mobileQuery.matches) {
-            navbar.classList.remove("nav-needs-toggle");
-            return;
+    const wasUsingResponsiveToggle =
+        navbar.classList.contains("nav-needs-toggle");
+
+    navbar.classList.remove("nav-needs-toggle");
+
+    /* Reset the menu if switching from tablet/desktop mode */
+    if (wasUsingResponsiveToggle) {
+        navbar.classList.remove("menu-open");
+
+        const menuButton = navbar.querySelector(".menu-toggle");
+
+        if (menuButton) {
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
         }
+    }
+
+    return;
+}
 
         /* Temporarily restore horizontal links to check whether they occupy more than one row.*/
         
