@@ -558,8 +558,8 @@ a:focus-visible {
         padding: 8px 0;
 
         background: #fffcf7;
-        border: 1px solid #e8e0d6;
-        border-radius: 8px;
+        border: 1px solid #dddddd;
+        border-radius: 3px;
         box-shadow: 0 8px 24px rgb(0 0 0 / 14%);
     }
 
@@ -631,12 +631,14 @@ a:focus-visible {
 
     .follow-button {
         display: block;
-        width: clamp(124.8px, 50.6%, 250.4px);
+        /*width: clamp(124.8px, 50.6%, 250.4px);   old   */ 
+        /*width: clamp(106.1px, 43%, 212.8px);   new original  */
+        width: clamp(106px, 43%, 213px);     /* new edited */
         margin: 0 auto 10px;
         padding: 9px 12px;
 
         background: #e22450;
-        color: #ffffff;
+        color: #fffcf7;
         border: none;
         border-radius: 3px;
 
@@ -951,8 +953,8 @@ a:focus-visible {
         padding: 8px 0;
 
         background: #fffcf7;
-        border: 1px solid #e8e0d6;
-        border-radius: 8px;
+        border: 1px solid #dddddd;
+        border-radius: 3px;
         box-shadow: 0 8px 24px rgb(0 0 0 / 14%);
     }
 
