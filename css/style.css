@@ -78,14 +78,14 @@ a:focus-visible {
 }
 
 /* Invisible text copy to reserve space in navigation links */
-.nav-links a::after {
+/* .nav-links a::after {
     content: attr(data-text);
     display: block;
     height: 0;
     overflow: hidden;
     visibility: hidden;
     font-weight: 500;
-}
+} */
 
 .nav-links a:hover {
     color: #e22450;
