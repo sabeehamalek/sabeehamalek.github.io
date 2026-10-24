@@ -498,20 +498,70 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    /* Close open menus with the Escape key */
+    /* Handle Escape and keyboard focus in open menus */
 
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-            if (followModal.classList.contains("is-open")) {
-                closeFollowModalPopup();
-            }
+document.addEventListener("keydown", function (event) {
 
-            if (navbar.classList.contains("menu-open")) {
-                closeMenu();
-                menuButton.focus();
-            }
+    /* Close open menus when Escape is pressed */
+    if (event.key === "Escape") {
+        if (followModal.classList.contains("is-open")) {
+            closeFollowModalPopup();
         }
-    });
+
+        if (navbar.classList.contains("menu-open")) {
+            closeMenu();
+            menuButton.focus();
+        }
+
+        return;
+    }
+
+    /* Trap keyboard focus inside the Follow me panel */
+    if (
+        event.key !== "Tab" ||
+        !followModal.classList.contains("is-open")
+    ) {
+        return;
+    }
+
+    /* Find the buttons and links inside the panel */
+    const focusableElements = Array.from(
+        followModal.querySelectorAll(
+            'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+    ).filter(element => element.getClientRects().length > 0);
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (!firstElement || !lastElement) {
+        return;
+    }
+
+    /* Shift + Tab from the first element moves to the last */
+    if (
+        event.shiftKey &&
+        (
+            document.activeElement === firstElement ||
+            !followModal.contains(document.activeElement)
+        )
+    ) {
+        event.preventDefault();
+        lastElement.focus();
+    }
+
+    /* Tab from the last element moves to the first */
+    else if (
+        !event.shiftKey &&
+        (
+            document.activeElement === lastElement ||
+            !followModal.contains(document.activeElement)
+        )
+    ) {
+        event.preventDefault();
+        firstElement.focus();
+    }
+});
 });
     
 </script>
