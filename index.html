@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;450;500;550;600;650;700;750;800;850;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400..800&display=swap"
         rel="stylesheet"
     >
 
@@ -39,7 +39,7 @@
             Sabeeha Malek, <span class="degree">PhD</span>
         </a>
 
-        <!-- Mobile hamburger button -->
+        <!-- Hamburger navigation button -->
         <button
             class="menu-toggle"
             type="button"
@@ -57,28 +57,22 @@
             <li>
                 <a href="index.html"
                    class="active"
-                   aria-current="page"
-                   data-text="Home">Home</a>
+                   aria-current="page">Home</a>
             </li>
             <li>
-                <a href="about.html"
-                   data-text="About me">About me</a>
+                <a href="about.html">About me</a>
             </li>
             <li>
-                <a href="publications.html"
-                   data-text="Publications">Publications</a>
+                <a href="publications.html">Publications</a>
             </li>
             <li>
-                <a href="press.html"
-                   data-text="Press &amp; Media">Press &amp; Media</a>
+                <a href="press.html">Press &amp; Media</a>
             </li>
             <li>
-                <a href="resources.html"
-                   data-text="Resources">Resources</a>
+                <a href="resources.html">Resources</a>
             </li>
             <li>
-                <a href="contact.html"
-                   data-text="Contact">Contact</a>
+                <a href="contact.html">Contact</a>
             </li>
         </ul>
 
@@ -86,7 +80,7 @@
 </header>
 
 <!-- Responsive full-width banner -->
-<section class="banner">
+<div class="banner">
     <picture>
         <source
             media="(max-width: 700px)"
@@ -97,7 +91,7 @@
             alt="Microscopy images from biomedical research"
         >
     </picture>
-</section>
+</div>
 
     <!-- Main content -->
     <main class="main-container">
@@ -113,7 +107,7 @@
 
             <div class="profile-details">
 
-                <h2 class="profile-name">Sabeeha Malek, PhD</h2>
+                <p class="profile-name">Sabeeha Malek, PhD</p>
 
                 <p class="profile-title">Biomedical Researcher</p>
 
@@ -275,7 +269,7 @@
                 <img src="images/icons/bluesky.svg" alt="">
             </a>
 
-            <!-- 4. X -->
+            <!-- 4. twitter/X -->
             <a
                 href="#"
                 class="share-icon-link"
@@ -316,8 +310,7 @@
 
         <p class="share-status"
            id="share-status"
-           role="status"
-           aria-live="polite"></p>
+           role="status"></p>
 
     </div>
 </section>
@@ -440,7 +433,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuButton = document.querySelector(".menu-toggle");
     const navbar = document.querySelector(".navbar");
     const navLinks = document.querySelectorAll(".nav-links a");
-
     const followButton = document.getElementById("follow-button");
     const followModal = document.getElementById("follow-modal");
     const closeFollowModal = document.getElementById("follow-modal-close");
@@ -455,9 +447,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     menuButton.addEventListener("click", function (event) {
         event.stopPropagation();
-
         const isOpen = navbar.classList.toggle("menu-open");
-
         menuButton.setAttribute("aria-expanded", String(isOpen));
         menuButton.setAttribute(
             "aria-label",
@@ -474,14 +464,12 @@ document.addEventListener("DOMContentLoaded", function () {
     /* Close the navigation menu when tapping outside it */
 
     document.addEventListener("click", function (event) {
-        if (
-            navbar.classList.contains("menu-open") &&
+        if (navbar.classList.contains("menu-open") &&
             !navbar.contains(event.target)
         ) {
             closeMenu();
         }
     });
-
 
     /* Open and close the Follow me pop-up */
 
@@ -500,7 +488,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     followButton.addEventListener("click", openFollowModal);
-
     closeFollowModal.addEventListener("click", closeFollowModalPopup);
 
     /* Close the Follow me pop-up when tapping outside the panel */
@@ -510,7 +497,6 @@ document.addEventListener("DOMContentLoaded", function () {
             closeFollowModalPopup();
         }
     });
-
 
     /* Close open menus with the Escape key */
 
@@ -526,11 +512,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
-
 });
+    
 </script>
 
-    
 <script>
 (function () {
     const pageUrl = window.location.href.split("#")[0];
@@ -586,9 +571,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const nativeButton =
         document.querySelector('[data-share-action="native"]');
-
     const status = document.getElementById("share-status");
-
     if (nativeButton) {
         nativeButton.addEventListener("click", async function () {
             if (navigator.share) {
@@ -634,18 +617,12 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        /*
-         * Temporarily restore the horizontal links so we can
-         * check whether they occupy more than one row.
-         */
+        /* Temporarily restore horizontal links to check whether they occupy more than one row.*/
+        
         navbar.classList.remove("nav-needs-toggle");
-
         const items = Array.from(navLinks.children);
-
         if (items.length < 2) return;
-
         const firstRowTop = items[0].getBoundingClientRect().top;
-
         const linksHaveWrapped = items.some(item =>
             Math.abs(
                 item.getBoundingClientRect().top - firstRowTop
@@ -657,11 +634,21 @@ document.addEventListener("DOMContentLoaded", function () {
             "nav-needs-toggle",
             linksHaveWrapped
         );
+        /* Close the menu if the horizontal navigation fits again */
+if (!linksHaveWrapped) {
+    navbar.classList.remove("menu-open");
+
+    const menuButton = navbar.querySelector(".menu-toggle");
+
+    if (menuButton) {
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+    }
+}
     }
 
     /* Recheck on initial load and whenever the viewport changes */
     updateNavigationMode();
-
     window.addEventListener("resize", updateNavigationMode);
     window.addEventListener("load", updateNavigationMode);
 
@@ -670,7 +657,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.fonts.ready.then(updateNavigationMode);
     }
 })();
-</script>
 </script>
 
 </body>
