@@ -70,7 +70,6 @@ a:focus-visible {
 }
 
 .nav-links a {
-    /* position: relative; */
     color: #111111;
     font-size: clamp(0.82rem, calc(0.55rem + 0.8vw), 0.95rem);
     font-weight: 500;
