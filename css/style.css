@@ -248,6 +248,9 @@ a:focus-visible {
     margin: 0 0 22px;
 }
 
+.overview-section p a:visited {
+    color: #bd1b40;
+}
 
 /* ======= 8. CONTENT LINKS ======= */
 
