@@ -268,7 +268,16 @@ a:focus-visible {
     text-decoration-thickness: 2px;
 }
 
+/* Hyperlinks within page content */
+.overview-section p a {
+    color: #e22450;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
 
+.overview-section p a:hover {
+    text-decoration-thickness: 2px;
+}
 /* ======= 9. SHARE SECTION ======= */
 
 .share-section {
