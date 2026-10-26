@@ -929,7 +929,7 @@ a:focus-visible {
     /* Keep the complete image visible on the left */
     .press-page .press-card-image-link {
         display: flex;
-        flex: 0 0 clamp(185px, 40.3%, 370px);
+        flex: 0 0 clamp(190px, 45.0%, 420px);
         align-items: center;
         justify-content: center;
         min-width: 0;
