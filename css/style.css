@@ -933,6 +933,7 @@ a:focus-visible {
         align-items: center;
         justify-content: center;
         min-width: 0;
+        padding-left: 8px;
         background: #ffffff;
     }
 
