@@ -906,34 +906,75 @@ a:focus-visible {
     font-size: 0.9rem;
 }
 
-/* Side-by-side image and text on intermediate screens */
-@media (min-width: 701px) and (max-width: 1099px) {
-    .press-card {
-        flex-direction: row;
+
+/* ======= DESKTOP PRESS & MEDIA LAYOUT ======= */
+
+@media (min-width: 701px) {
+
+    /* One press card per row */
+    .press-page .press-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        margin-top: 0;
     }
 
-    .press-card-image-link {
+    /* Image on the left, text on the right */
+    .press-page .press-card {
         display: flex;
-        flex: 0 0 30%;
+        flex-direction: row;
         align-items: stretch;
+        min-width: 0;
     }
 
-    .press-card-image {
+    /* Keep the complete image visible on the left */
+    .press-page .press-card-image-link {
+        display: flex;
+        flex: 0 0 clamp(120px, 28%, 250px);
+        align-items: center;
+        justify-content: center;
+        min-width: 0;
+        background: #f0f0f0;
+    }
+
+    .press-page .press-card-image {
+        display: block;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        max-height: 260px;
+        object-fit: contain;
     }
 
-    .press-card-content {
-        padding: 16px;
+    /* Publication details, headline and description on the right */
+    .press-page .press-card-content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 0;
+        padding: clamp(14px, 1.5vw, 24px);
+    }
+
+    .press-page .press-card .press-meta {
+        margin-bottom: 10px;
+    }
+
+    .press-page .press-card h2 {
+        margin-bottom: 12px;
+    }
+
+    .press-page .press-card .press-card-content > p:not(.press-meta) {
+        margin: 0;
+    }
+
+    /* Reduce the gap beneath the page heading */
+    .press-page h1 {
+        margin-bottom: 12px;
+    }
+
+    .press-page .press-intro {
+        margin-bottom: 16px !important;
     }
 }
 
-/* Two cards per row on wide desktop screens */
-@media (min-width: 1100px) {
-    .press-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
 
 
