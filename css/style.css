@@ -1045,9 +1045,9 @@ a:focus-visible {
     line-height: 1.4;
 }
 
-.publication-title {
+.publication-card .publication-title {
     margin: 0 0 12px;
-    font-size: 1.15rem;
+    font-size: 0.9rem;
     font-weight: 600;
     line-height: 1.35;
     overflow-wrap: anywhere;
@@ -1148,16 +1148,22 @@ a:focus-visible {
         flex-direction: column;
     }
 
-    .publication-image-link {
-        flex: none;
-        width: 100%;
-        padding: 18px 18px 0;
-    }
+.publication-image-link {
+    display: block;
+    flex: none;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    background: #f0f0f0;
+}
 
-    .publication-image {
-        width: min(100%, 240px);
-        max-height: 260px;
-    }
+.publication-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+}
 
     .publication-details {
         padding: 18px;
