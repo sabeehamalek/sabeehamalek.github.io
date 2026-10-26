@@ -975,24 +975,3 @@ a:focus-visible {
         margin-bottom: 16px !important;
     }
 }
-
-/* Publication details overlaid at the top of each press image */
-.press-card-image-link {
-    position: relative;
-}
-
-.press-card .press-meta {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    margin: 0;
-    padding: 8px 10px;
-    background: rgba(255, 252, 247, 0.94);
-    color: #555555;
-    font-size: 0.78rem;
-    font-weight: 600;
-    line-height: 1.4;
-}
-
