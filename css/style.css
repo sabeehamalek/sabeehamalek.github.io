@@ -1140,6 +1140,11 @@ a:focus-visible {
     margin-bottom: 0;
 }
 
+/* Match the spacing between press metadata and titles */
+.publication-card .publication-type {
+    margin: 0 0 10px;
+}
+
 /* Slightly indent plain-language summaries on desktop */
 @media (min-width: 701px) {
     .publication-card .publication-summary {
