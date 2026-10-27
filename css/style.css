@@ -1146,10 +1146,33 @@ a:focus-visible {
     margin: 0 0 10px;
 }
 
-/* Indent the entire plain-language summary section on desktop */
+/* ======= INDENTED PLAIN-LANGUAGE SUMMARY ======= */
+
 @media (min-width: 701px) {
+
+    /* Remove the outer card surface on desktop */
+    .publication-card {
+        background: transparent;
+        border: none;
+        overflow: visible;
+    }
+
+    /* Keep the image and publication details in a white card */
+    .publication-header {
+        background: #ffffff;
+        border: 1px solid #dddddd;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    /* Indent the summary as an extension of the publication */
     .publication-card .publication-summary {
         margin-left: clamp(32px, 3vw, 42px);
+        padding: clamp(18px, 2vw, 28px);
+        background: #ffffff;
+        border: 1px solid #dddddd;
+        border-top: none;
+        border-radius: 0 0 6px 6px;
     }
 }
 
