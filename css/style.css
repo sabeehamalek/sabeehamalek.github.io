@@ -1146,12 +1146,13 @@ a:focus-visible {
     margin: 0 0 10px;
 }
 
-/* Slightly indent plain-language summaries on desktop */
+/* Indent the entire plain-language summary section on desktop */
 @media (min-width: 701px) {
     .publication-card .publication-summary {
-        padding-left: clamp(32px, 3vw, 42px);
+        margin-left: clamp(32px, 3vw, 42px);
     }
 }
+
 /* ======= MOBILE PUBLICATIONS LAYOUT ======= */
 
 @media (max-width: 700px) {
