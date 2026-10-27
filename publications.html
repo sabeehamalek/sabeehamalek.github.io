@@ -238,9 +238,8 @@
 <h1>Publications</h1>
 
 <p class="publications-intro">
-    Below are my peer-reviewed publications, each accompanied by a
-    plain-language summary to make the research more accessible to
-    a wider audience.
+    Below are my preprints and peer-reviewed publications, each accompanied by a
+    plain-language summary.
 </p>
 
 <div class="publication-list">
@@ -301,7 +300,13 @@
 <div class="publication-summary">
 
     <div class="publication-summary-heading">
-        <h3>Plain-language summary</h3>
+        <button
+            class="summary-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="pathogenesis-summary-content"
+        >Show plain-language summary +</button>
+    </div>
 
         <button
             class="summary-toggle"
@@ -423,7 +428,13 @@
 <div class="publication-summary">
 
     <div class="publication-summary-heading">
-        <h3>Plain-language summary</h3>
+        <button
+            class="summary-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="beighton-summary-content"
+        >Show plain-language summary +</button>
+    </div>
 
         <button
             class="summary-toggle"
@@ -1073,8 +1084,8 @@
             content.hidden = isExpanded;
 
             button.textContent = isExpanded
-                ? "Show summary +"
-                : "Hide summary −";
+                ? "Show plain-language summary +"
+                : "Hide plain-language summary −";
         });
     });
 </script>
