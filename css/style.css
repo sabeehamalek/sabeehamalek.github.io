@@ -1071,18 +1071,18 @@ a:focus-visible {
 
 .publication-authors {
     margin: 0 0 4px !important;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 400;
 }
 
 .publication-authors strong {
-    font-weight: 550;
+    font-weight: 500;
 }
 
 .publication-journal {
     margin: 0 0 5px !important;
     color: #555555;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     line-height: 1.5;
 }
 
@@ -1090,7 +1090,7 @@ a:focus-visible {
     display: inline-block;
     margin-top: 2px;
     color: #e22450;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -1113,14 +1113,14 @@ a:focus-visible {
 
 .publication-summary h3 {
     margin: 0 0 16px;
-    font-size: 1.15rem;
+    font-size: 1.0rem;
     font-weight: 600;
     line-height: 1.35;
 }
 
 .publication-summary h4 {
     margin: 20px 0 6px;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 700;
     line-height: 1.4;
 }
