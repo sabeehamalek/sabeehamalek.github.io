@@ -246,7 +246,7 @@ a:focus-visible {
 .overview-section > p {
     max-width: 1100px;
     margin: 0 0 22px;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .overview-section p a:visited {
