@@ -298,9 +298,26 @@
         </div>
 
         <!-- Plain-language summary -->
-        <div class="publication-summary">
+<div class="publication-summary">
 
-            <h3>Plain-language summary</h3>
+    <div class="publication-summary-heading">
+        <h3>Plain-language summary</h3>
+
+        <button
+            class="summary-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="pathogenesis-summary-content"
+        >Show summary +</button>
+    </div>
+
+    <div
+        class="publication-summary-content"
+        id="pathogenesis-summary-content"
+        hidden
+    >
+        <!-- Keep all three existing question headings
+             and their paragraphs here, unchanged. -->
 
             <h4>What was the research about?</h4>
 
@@ -344,9 +361,11 @@
                 mechanism requires further experimental validation.
             </p>
 
-        </div>
-    </article>
+        </div><!-- Closes publication-summary-content -->
 
+    </div><!-- Closes publication-summary -->
+
+    </article>
 
     <!-- Publication 2: Beighton Score -->
     <article class="publication-card">
@@ -401,9 +420,26 @@
         </div>
 
         <!-- Plain-language summary -->
-        <div class="publication-summary">
+<div class="publication-summary">
 
-            <h3>Plain-language summary</h3>
+    <div class="publication-summary-heading">
+        <h3>Plain-language summary</h3>
+
+        <button
+            class="summary-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="beighton-summary-content"
+        >Show summary +</button>
+    </div>
+
+    <div
+        class="publication-summary-content"
+        id="beighton-summary-content"
+        hidden
+    >
+        <!-- Keep all three existing question headings
+             and their paragraphs here, unchanged. -->
 
             <h4>What was the research about?</h4>
 
@@ -443,11 +479,13 @@
                 as the sole basis for identifying or excluding GJH.
             </p>
 
-        </div>
+        </div><!-- Closes publication-summary-content -->
+
+    </div><!-- Closes publication-summary -->
+
     </article>
 
-</div>
-
+</div><!-- Closes publication-list -->
 
             <!-- Share this page -->
             <section
@@ -1017,6 +1055,29 @@
             }
         })();
     </script>
+
+    
+<!-- Expand and collapse plain-language summaries -->
+<script>
+    document.querySelectorAll(".summary-toggle").forEach(function (button) {
+        const contentId = button.getAttribute("aria-controls");
+        const content = document.getElementById(contentId);
+
+        if (!content) return;
+
+        button.addEventListener("click", function () {
+            const isExpanded =
+                button.getAttribute("aria-expanded") === "true";
+
+            button.setAttribute("aria-expanded", String(!isExpanded));
+            content.hidden = isExpanded;
+
+            button.textContent = isExpanded
+                ? "Show summary +"
+                : "Hide summary −";
+        });
+    });
+</script>
 
 </body>
 </html>
