@@ -1040,7 +1040,7 @@ a:focus-visible {
 }
 
 .publication-type {
-    margin: 0 0 8px;
+    margin: 0 0 4px;
     color: #777777;
     font-size: 0.78rem;
     font-weight: 600;
@@ -1076,7 +1076,7 @@ a:focus-visible {
 }
 
 .publication-journal {
-    margin: 0 0 10px !important;
+    margin: 0 0 5px !important;
     color: #555555;
     font-size: 0.82rem;
     line-height: 1.5;
@@ -1136,6 +1136,12 @@ a:focus-visible {
     margin-bottom: 0;
 }
 
+/* Slightly indent plain-language summaries on desktop */
+@media (min-width: 701px) {
+    .publication-card .publication-summary {
+        padding-left: clamp(32px, 3vw, 42px);
+    }
+}
 /* ======= MOBILE PUBLICATIONS LAYOUT ======= */
 
 @media (max-width: 700px) {
