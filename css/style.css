@@ -1105,36 +1105,107 @@ a:focus-visible {
     text-decoration-thickness: 2px;
 }
 
-/* Full-width plain-language summary beneath the publication details */
+/* ======= COLLAPSIBLE PLAIN-LANGUAGE SUMMARIES ======= */
 
 .publication-summary {
-    padding: clamp(18px, 2vw, 28px);
+    padding: 14px clamp(18px, 2vw, 28px);
     border-top: 1px solid #dddddd;
 }
 
+.publication-summary-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
 .publication-summary h3 {
-    margin: 0 0 16px;
+    margin: 0;
     font-size: 1.1rem;
     font-weight: 600;
     line-height: 1.35;
 }
 
-.publication-summary h4 {
+/* Pink/red show and hide button */
+.summary-toggle {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 12px;
+    background: #e22450;
+    color: #fffcf7;
+    border: none;
+    border-radius: 4px;
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.summary-toggle:hover {
+    background: #bd1b40;
+}
+
+.summary-toggle:focus-visible {
+    outline: 2px solid #111111;
+    outline-offset: 3px;
+}
+
+/* Expanded summary content */
+.publication-summary-content {
+    display: flow-root;
+    margin-top: 18px;
+}
+
+.publication-summary-content[hidden] {
+    display: none;
+}
+
+.publication-summary-content h4 {
     margin: 20px 0 6px;
     font-size: 0.95rem;
     font-weight: 700;
     line-height: 1.4;
 }
 
-.publication-summary h3 + h4 {
+.publication-summary-content h4:first-child {
     margin-top: 0;
 }
 
-.publication-summary p {
+.publication-summary-content p {
     max-width: none;
     margin: 0 0 16px;
     font-size: 0.9rem;
     line-height: 1.65;
+}
+
+.publication-summary-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Mobile spacing */
+@media (max-width: 700px) {
+    .publication-summary {
+        padding: 16px 18px;
+    }
+
+    .publication-summary h3 {
+        font-size: 1.1rem;
+    }
+
+    .summary-toggle {
+        font-size: 0.8rem;
+    }
+}
+
+
+.publication-summary h3 + h4 {
+    margin-top: 0;
 }
 
 .publication-summary p:last-child {
@@ -1146,35 +1217,6 @@ a:focus-visible {
     margin: 0 0 10px;
 }
 
-/* ======= INDENTED PLAIN-LANGUAGE SUMMARY ======= */
-
-@media (min-width: 701px) {
-
-    /* Remove the outer card surface on desktop */
-    .publication-card {
-        background: transparent;
-        border: none;
-        overflow: visible;
-    }
-
-    /* Keep the image and publication details in a white card */
-    .publication-header {
-        background: #ffffff;
-        border: 1px solid #dddddd;
-        border-radius: 6px;
-        overflow: hidden;
-    }
-
-    /* Indent the summary as an extension of the publication */
-    .publication-card .publication-summary {
-        margin-left: clamp(32px, 3vw, 42px);
-        padding: clamp(18px, 2vw, 28px);
-        background: #ffffff;
-        border: 1px solid #dddddd;
-        border-top: none;
-        border-radius: 0 0 6px 6px;
-    }
-}
 
 /* ======= MOBILE PUBLICATIONS LAYOUT ======= */
 
