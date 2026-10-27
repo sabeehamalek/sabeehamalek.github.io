@@ -1072,7 +1072,11 @@ a:focus-visible {
 .publication-authors {
     margin: 0 0 4px !important;
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 400;
+}
+
+.publication-authors strong {
+    font-weight: 550;
 }
 
 .publication-journal {
@@ -1134,6 +1138,11 @@ a:focus-visible {
 
 .publication-summary p:last-child {
     margin-bottom: 0;
+}
+
+/* Match the spacing between press metadata and titles */
+.publication-card .publication-type {
+    margin: 0 0 10px;
 }
 
 /* Slightly indent plain-language summaries on desktop */
