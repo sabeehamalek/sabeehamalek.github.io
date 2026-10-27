@@ -1072,11 +1072,11 @@ a:focus-visible {
 .publication-authors {
     margin: 0 0 4px !important;
     font-size: 0.8rem;
-    font-weight: 400;
+    font-weight: 430;
 }
 
 .publication-authors strong {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .publication-journal {
@@ -1113,14 +1113,14 @@ a:focus-visible {
 
 .publication-summary h3 {
     margin: 0 0 16px;
-    font-size: 1.0rem;
+    font-size: 1.1rem;
     font-weight: 600;
     line-height: 1.35;
 }
 
 .publication-summary h4 {
     margin: 20px 0 6px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 700;
     line-height: 1.4;
 }
@@ -1138,11 +1138,6 @@ a:focus-visible {
 
 .publication-summary p:last-child {
     margin-bottom: 0;
-}
-
-/* Match the spacing between press metadata and titles */
-.publication-card .publication-type {
-    margin: 0 0 10px;
 }
 
 /* Slightly indent plain-language summaries on desktop */
