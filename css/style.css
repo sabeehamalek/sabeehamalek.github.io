@@ -1272,3 +1272,67 @@ a:focus-visible {
     }
 }
 
+/* ===== Publication image and summary-button layout ===== */
+.publication-image-column {
+    display: flex;
+    flex: 0 0 clamp(185px, 40.5%, 370px);
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+    padding: 8px 0 16px 8px;
+    background: #ffffff;
+}
+
+.publication-image-column .publication-image-link {
+    display: flex;
+    flex: none;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    background: #ffffff;
+    line-height: 0;
+}
+
+.publication-image-column .summary-toggle {
+    align-self: center;
+    max-width: 100%;
+    margin-top: 12px;
+    white-space: normal;
+    text-align: center;
+}
+
+/* Align the publication details with the top of the image */
+.publication-details {
+    justify-content: flex-start;
+    padding: 8px clamp(16px, 1.8vw, 26px)
+             clamp(16px, 1.8vw, 26px);
+}
+
+/* Keep the image full-width on mobile and centre the button beneath it */
+@media (max-width: 700px) {
+    .publication-image-column {
+        flex: none;
+        width: 100%;
+        padding: 0;
+    }
+
+    .publication-image-column .publication-image-link {
+        display: block;
+        flex: none;
+        width: 100%;
+        padding: 0;
+        overflow: hidden;
+        background: #f0f0f0;
+    }
+
+    .publication-image-column .summary-toggle {
+        margin-top: 12px;
+    }
+
+    .publication-details {
+        justify-content: flex-start;
+        padding: 18px;
+    }
+}
