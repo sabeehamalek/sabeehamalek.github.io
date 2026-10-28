@@ -1337,13 +1337,19 @@ a:focus-visible {
     }
 }
 
-/* Reduce the gap beneath the publication summary button */
+/* Add space beneath the button inside the publication card */
 .publication-image-column {
-    padding-bottom: 0;
+    padding-bottom: 8px;
 }
 
+/* Keep the show/hide button the same size */
 .publication-image-column .summary-toggle {
     margin-top: 6px;
+    width: 100%;
+    max-width: 230px;
+    min-height: 50px;
+    white-space: normal;
+    text-align: center;
 }
 
 /* Remove empty space when the plain-language summary is collapsed */
