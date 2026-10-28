@@ -1110,7 +1110,7 @@ a:focus-visible {
 /* ======= COLLAPSIBLE PLAIN-LANGUAGE SUMMARIES ======= */
 
 .publication-summary {
-    padding: 14px clamp(18px, 2vw, 28px);
+    padding: 6px clamp(18px, 2vw, 28px);
     border-top: none;
 }
 
