@@ -1013,10 +1013,11 @@ a:focus-visible {
 .publication-image-link {
     display: flex;
     flex: 0 0 clamp(185px, 40.5%, 370px);
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     min-width: 0;
     padding-left: 8px;
+    padding-top: 8px;
     background: #ffffff;
     line-height: 0;
 }
@@ -1109,7 +1110,7 @@ a:focus-visible {
 
 .publication-summary {
     padding: 14px clamp(18px, 2vw, 28px);
-    border-top: 1px solid #dddddd;
+    border-top: none;
 }
 
 .publication-summary-heading {
