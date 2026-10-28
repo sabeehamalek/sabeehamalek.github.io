@@ -1408,7 +1408,3 @@ a:focus-visible {
     display: inline-block;
 }
 
-/* Reduce the Altmetric donut to 50% of its normal size */
-.publication-metric .altmetric-embed {
-    zoom: 0.5;
-}
