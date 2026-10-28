@@ -1339,7 +1339,7 @@ a:focus-visible {
 
 /* Add space beneath the button inside the publication card */
 .publication-image-column {
-    padding-bottom: 8px;
+    padding-bottom: 10px;
 }
 
 /* Keep the summary button centred, on one line and the same size */
@@ -1349,7 +1349,7 @@ a:focus-visible {
     min-width: 16em;
     max-width: none;
     min-height: 0;
-    margin-top: 6px;
+    margin-top: 10px;
     padding: 7px 12px;
     white-space: nowrap;
     text-align: center;
