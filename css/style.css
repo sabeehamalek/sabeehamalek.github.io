@@ -1036,9 +1036,10 @@ a:focus-visible {
     flex: 1;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     min-width: 0;
-    padding: clamp(16px, 1.8vw, 26px);
+    padding: 8px clamp(16px, 1.8vw, 26px)
+             clamp(16px, 1.8vw, 26px);
 }
 
 .publication-type {
