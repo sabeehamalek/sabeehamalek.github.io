@@ -1342,13 +1342,16 @@ a:focus-visible {
     padding-bottom: 8px;
 }
 
-/* Keep the show/hide button the same size */
+/* Keep the summary button centred, on one line and the same size */
 .publication-image-column .summary-toggle {
+    align-self: center;
+    width: 16em;
+    min-width: 16em;
+    max-width: none;
+    min-height: 0;
     margin-top: 6px;
-    width: 100%;
-    max-width: 230px;
-    min-height: 50px;
-    white-space: normal;
+    padding: 7px 12px;
+    white-space: nowrap;
     text-align: center;
 }
 
