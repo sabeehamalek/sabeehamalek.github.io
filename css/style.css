@@ -1308,4 +1308,49 @@ a:focus-visible {
     }
 }
 
+/* ===== MOBILE: PLACE SUMMARY BUTTONS BELOW PUBLICATION DETAILS ===== */
 
+@media (max-width: 700px) {
+
+    /* Use a grid to control the mobile order */
+    .publication-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+    }
+
+    /* Let the image and buttons become separate grid items */
+    .publication-image-column {
+        display: contents;
+    }
+
+    /* First: publication image */
+    .publication-image-column > .publication-image-link {
+        grid-column: 1;
+        grid-row: 1;
+        display: block;
+        width: 100%;
+        padding: 8px 8px 0;
+        overflow: hidden;
+        background: #ffffff;
+    }
+
+    /* Second: publication details, including metrics */
+    .publication-details {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        min-width: 0;
+        padding: 8px;
+    }
+
+    /* Third: both buttons beneath the metrics */
+    .publication-image-column > .publication-actions {
+        grid-column: 1;
+        grid-row: 3;
+        width: 100%;
+        margin: 0;
+        padding: 0 8px 8px;
+        justify-content: center;
+    }
+}
