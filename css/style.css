@@ -1023,6 +1023,7 @@ a:focus-visible {
     padding: 8px;
     background: #ffffff;
     container-type: inline-size;
+    row-gap: 8px; /* Minimum space between image and buttons */
 }
 
 /* Image fits within the 8px padding */
