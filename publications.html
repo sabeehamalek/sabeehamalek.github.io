@@ -266,13 +266,24 @@
                     >
                 </a>
 
-                <button
-                    class="summary-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="pathogenesis-summary-content"
-                >Show plain language summary +</button>
-            </div>
+                
+<div class="publication-actions">
+
+    <button
+        class="publication-action summary-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="pathogenesis-summary-content"
+    >Plain language summary ▾</button>
+
+    <a
+        class="publication-action publication-paper-button"
+        href="https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2021.649082/full"
+        target="_blank"
+        rel="noopener noreferrer"
+    >Full Paper ↗</a>
+
+</div>
 
             <div class="publication-details">
 
@@ -299,7 +310,7 @@
 
     <div class="publication-metric">
         <span class="publication-metric-label">
-            Citations (Dimensions)
+            Citations
         </span>
         <span
             class="__dimensions_badge_embed__"
@@ -311,7 +322,7 @@
 
     <div class="publication-metric">
         <span class="publication-metric-label">
-            Altmetric Attention Score
+            Altmetric Score
         </span>
         <div
             class="altmetric-embed"
@@ -322,24 +333,19 @@
     </div>
 
 </div>
-                <a
-                    class="publication-read-link"
-                    href="https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2021.649082/full"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >Read the publication ↗</a>
 
             </div>
         </div>
 
         <!-- Plain language summary -->
-<div class="publication-summary">
-
-    <div
-        class="publication-summary-content"
-        id="pathogenesis-summary-content"
-        hidden
-    >
+<div
+    class="publication-summary"
+    id="pathogenesis-summary-content"
+    hidden
+>
+    <div class="publication-summary-content">
+        <h3>Plain-language summary</h3>
+        
         <!-- Keep all three existing question headings
              and their paragraphs here, unchanged. -->
 
@@ -413,12 +419,25 @@
                     >
                 </a>
 
-                <button
-                    class="summary-toggle"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="beighton-summary-content"
-                >Show plain language summary +</button>
+
+<div class="publication-actions">
+
+    <button
+        class="publication-action summary-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="beighton-summary-content"
+    >Plain language summary ▾</button>
+
+    <a
+        class="publication-action publication-paper-button"
+        href="https://link.springer.com/article/10.1007/s00296-021-04832-4"
+        target="_blank"
+        rel="noopener noreferrer"
+    >Full Paper ↗</a>
+
+</div>
+
             </div>
 
             <div class="publication-details">
@@ -469,24 +488,20 @@
     </div>
 
 </div>
-                <a
-                    class="publication-read-link"
-                    href="https://link.springer.com/article/10.1007/s00296-021-04832-4"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >Read the publication ↗</a>
+
 
             </div>
         </div>
 
         <!-- Plain language summary -->
-<div class="publication-summary">
-
-    <div
-        class="publication-summary-content"
-        id="beighton-summary-content"
-        hidden
-    >
+<div
+    class="publication-summary"
+    id="beighton-summary-content"
+    hidden
+>
+    <div class="publication-summary-content">
+        <h3>Plain-language summary</h3>
+        
         <!-- Keep all three existing question headings
              and their paragraphs here, unchanged. -->
 
@@ -1122,8 +1137,8 @@
             content.hidden = isExpanded;
 
             button.textContent = isExpanded
-                ? "Show plain language summary +"
-                : "Hide plain language summary −";
+                ? "Plain language summary ▾"
+                : "Plain language summary ▴";
         });
     });
 </script>
