@@ -1047,7 +1047,7 @@ a:focus-visible {
 .publication-actions {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: nowrap;
     gap: 6px;
     width: 100%;
@@ -1169,7 +1169,7 @@ a:focus-visible {
     /* New separator styling */
     width: fit-content;
     max-width: 100%;
-    border-top: 2px solid #777777;
+    border-top: 1px solid #777777;
     padding-top: 3px;
 }
 
@@ -1197,6 +1197,7 @@ a:focus-visible {
 .publication-metric .__dimensions_badge_embed__,
 .publication-metric .altmetric-embed {
     display: inline-block;
+    zoom: 0.8;
 }
 
 /* ===== BOTTOM: EXPANDABLE PLAIN-LANGUAGE SUMMARY ===== */
