@@ -1051,7 +1051,8 @@ a:focus-visible {
     flex-wrap: nowrap;
     gap: 6px;
     width: 100%;
-    margin-top: 8px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 /* Both buttons use content-sized widths and 8px internal padding */
