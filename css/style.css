@@ -1171,6 +1171,8 @@ a:focus-visible {
     max-width: 100%;
     border-top: 1px solid #777777;
     padding-top: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .publication-metric {
