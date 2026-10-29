@@ -1109,7 +1109,7 @@ a:focus-visible {
 
 /* Publication type */
 .publication-type {
-    margin: 0 0 10px;
+    margin: 0 0 8px;
     color: #777777;
     font-size: 0.78rem;
     font-weight: 600;
@@ -1118,7 +1118,7 @@ a:focus-visible {
 
 /* Publication title */
 .publication-card .publication-title {
-    margin: 0 0 12px;
+    margin: 0 0 8px;
     font-size: 0.9rem;
     font-weight: 600;
     line-height: 1.35;
@@ -1189,8 +1189,8 @@ a:focus-visible {
 
 .publication-metric-label {
     color: #555555;
-    font-size: 0.65rem;
-    font-weight: 500;
+    font-size: 0.7rem;
+    font-weight: 550;
     line-height: 1.2;
 }
 
