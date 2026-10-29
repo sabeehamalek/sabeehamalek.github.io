@@ -1189,15 +1189,15 @@ a:focus-visible {
 
 .publication-metric-label {
     color: #555555;
-    font-size: 0.7rem;
-    font-weight: 600;
-    line-height: 1.3;
+    font-size: 0.65rem;
+    font-weight: 500;
+    line-height: 1.2;
 }
 
 .publication-metric .__dimensions_badge_embed__,
 .publication-metric .altmetric-embed {
     display: inline-block;
-    zoom: 0.8;
+    zoom: 0.9;
 }
 
 /* ===== BOTTOM: EXPANDABLE PLAIN-LANGUAGE SUMMARY ===== */
