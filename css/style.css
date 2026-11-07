@@ -1542,3 +1542,122 @@ a:focus-visible {
 
 }
 
+/* ===== HELPLINES AND SUPPORT SERVICES ===== */
+
+/* Introductory qualification */
+.support-intro-note {
+    margin: 0 0 20px !important;
+    padding-left: 12px;
+    border-left: 3px solid #dddddd;
+    color: #555555;
+    font-size: 0.82rem !important;
+}
+
+
+/* Support-service cards */
+
+.support-service-grid {
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+.support-service-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+
+/* Individual organisation entries */
+
+.support-service-item {
+    min-width: 0;
+}
+
+.support-service-item + .support-service-item {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.support-service-item h4 {
+    margin: 0 0 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.support-service-item h4 a {
+    color: #e22450;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.support-service-item h4 a:visited {
+    color: #bd1b40;
+}
+
+.support-service-item h4 a:hover {
+    text-decoration-thickness: 2px;
+}
+
+
+/* Organisation descriptions */
+
+.support-service-item p {
+    margin: 0 0 7px;
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.support-service-item .support-service-meta {
+    margin-bottom: 0;
+    color: #666666;
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+
+/* Subheadings within a condition card */
+
+.support-service-subheading {
+    margin: 16px 0 8px;
+    color: #444444;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+
+/* Temporary service restrictions */
+
+.support-service-item .support-service-status {
+    margin: 7px 0;
+    color: #795000;
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+
+/* Cross-reference to another condition section */
+
+.support-cross-reference {
+    margin: 16px 0 0;
+    padding-top: 12px;
+    border-top: 1px solid #e5e5e5;
+    color: #555555;
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.support-cross-reference a {
+    color: #e22450;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.support-cross-reference a:hover {
+    text-decoration-thickness: 2px;
+}
