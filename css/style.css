@@ -1661,3 +1661,11 @@ a:focus-visible {
 .support-cross-reference a:hover {
     text-decoration-thickness: 2px;
 }
+
+/* Display helpline cards in a single column on desktop */
+
+@media (min-width: 701px) {
+    #helplines .support-service-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
