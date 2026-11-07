@@ -1477,6 +1477,7 @@ a:focus-visible {
     background: #ffffff;
     border: 1px solid #dddddd;
     border-radius: 6px;
+    overflow: hidden;
 }
 
 .resource-directory-group h3 {
@@ -1670,12 +1671,23 @@ a:focus-visible {
     }
 }
 
+/* ===== RESOURCE CARD HEADINGS ===== */
+
 .resource-directory-group > h3 {
     background-color: #555555;
     color: #fffcf7;
-    padding: 0.3em 0.5em;
-    border-radius: 5px;
-    font-size: 1.0em;
+    padding: 0.55em 16px;
+    border-radius: 0;
+    font-size: 1em;
     font-weight: 600;
-    margin: 0 0 1em;
+    margin: -16px -16px 14px;
+}
+
+/* Adjust heading position to match mobile card padding */
+
+@media (max-width: 700px) {
+    .resource-directory-group > h3 {
+        margin: -14px -14px 12px;
+        padding: 0.55em 14px;
+    }
 }
