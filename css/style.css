@@ -1669,3 +1669,15 @@ a:focus-visible {
         grid-template-columns: minmax(0, 1fr);
     }
 }
+
+/* External link arrow – Helplines section */
+
+#helplines .support-service-item h4 a::after {
+    content: " ↗";
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 400;
+    margin-left: 3px;
+    text-decoration: none;
+    vertical-align: 0.1em;
+}
