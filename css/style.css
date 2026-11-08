@@ -1388,11 +1388,11 @@ a:focus-visible {
     min-height: 135px;
     padding: 20px 14px;
 
-    background: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 6px;
+    background: #e22450;
+    border: 1px solid #e22450;
+    border-radius: 4px;
 
-    color: #111111;
+    color: #fffcf7;
     font-size: 0.9rem;
     font-weight: 600;
     line-height: 1.35;
@@ -1400,9 +1400,25 @@ a:focus-visible {
     text-decoration: none;
 
     transition:
+        background-color 0.15s ease,
         border-color 0.15s ease,
-        color 0.15s ease,
         transform 0.15s ease;
+}
+
+.resource-nav-card:visited {
+    color: #fffcf7;
+}
+
+.resource-nav-card:hover {
+    background: #bd1b40;
+    border-color: #bd1b40;
+    color: #fffcf7;
+    transform: translateY(-2px);
+}
+
+.resource-nav-card:focus-visible {
+    outline: 2px solid #111111;
+    outline-offset: 4px;
 }
 
 .resource-nav-card:hover {
@@ -1425,6 +1441,7 @@ a:focus-visible {
     width: 36px;
     height: 36px;
     object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 
@@ -1440,6 +1457,10 @@ a:focus-visible {
 .resource-section {
     min-width: 0;
     scroll-margin-top: 120px;
+
+    background: #f0f0f0;
+    padding: clamp(14px, 2vw, 22px);
+    border-radius: 6px;
 }
 
 .resource-section h2 {
@@ -1466,9 +1487,13 @@ a:focus-visible {
 
 .resource-directory-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 14px;
-    margin-top: 20px;
+
+    --resource-card-indent: clamp(10px, 1.5vw, 20px);
+
+    margin: 20px 0 0 var(--resource-card-indent);
+    width: calc(100% - var(--resource-card-indent));
 }
 
 .resource-directory-group {
@@ -1663,13 +1688,6 @@ a:focus-visible {
     text-decoration-thickness: 2px;
 }
 
-/* Display helpline cards in a single column on desktop */
-
-@media (min-width: 701px) {
-    #helplines .support-service-grid {
-        grid-template-columns: minmax(0, 1fr);
-    }
-}
 
 /* ===== RESOURCE CARD HEADINGS ===== */
 
