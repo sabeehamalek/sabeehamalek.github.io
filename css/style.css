@@ -1454,27 +1454,104 @@ a:focus-visible {
     width: 100%;
 }
 
+/* ===== RESOURCE CONTENT SECTIONS ===== */
+
+.resource-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    width: 100%;
+}
+
+/* Main grey section panel */
+
 .resource-section {
+    display: block;
     min-width: 0;
     scroll-margin-top: 120px;
-
-    background: #f0f0f0;
     padding: clamp(14px, 2vw, 22px);
+    background: #f0f0f0;
     border-radius: 6px;
 }
 
-.resource-section h2 {
-    margin: 0 0 12px;
+/* Pink expandable heading */
+
+.resource-section > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 14px;
+
+    background: #e22450;
+    color: #fffcf7;
+    border-radius: 4px;
+
+    cursor: pointer;
+    list-style: none;
+
+    transition: background-color 0.15s ease;
+}
+
+/* Remove the browser's default disclosure marker */
+
+.resource-section > summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Plus/minus indicator */
+
+.resource-section > summary::after {
+    content: "+";
+    flex-shrink: 0;
+    color: #fffcf7;
+    font-size: 1.3em;
+    font-weight: 400;
+    line-height: 1;
+}
+
+/* Change plus to minus when expanded */
+
+.resource-section[open] > summary::after {
+    content: "−";
+}
+
+/* Heading text */
+
+.resource-section > summary .resource-section-heading {
+    display: block;
+    flex: 1;
+    margin: 0;
+    color: inherit;
     font-size: 1.3rem;
     font-weight: 600;
     line-height: 1.3;
 }
 
-.resource-section > p {
+/* Hover and keyboard focus */
+
+.resource-section > summary:hover {
+    background: #bd1b40;
+}
+
+.resource-section > summary:focus-visible {
+    outline: 2px solid #111111;
+    outline-offset: 3px;
+}
+
+/* Content beneath the expandable heading */
+
+.resource-section-content {
+    margin-top: 16px;
+}
+
+.resource-section-content > p {
     max-width: 1000px;
     margin: 0 0 12px;
     font-size: 0.9rem;
 }
+
+/* Placeholder text */
 
 .resource-placeholder {
     color: #777777;
@@ -1492,8 +1569,8 @@ a:focus-visible {
 
     --resource-card-indent: clamp(10px, 1.5vw, 20px);
 
-    margin: 20px 0 0 var(--resource-card-indent);
     width: calc(100% - var(--resource-card-indent));
+    margin: 20px 0 0 var(--resource-card-indent);
 }
 
 .resource-directory-group {
