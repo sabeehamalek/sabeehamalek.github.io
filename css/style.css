@@ -1469,9 +1469,11 @@ a:focus-visible {
     display: block;
     min-width: 0;
     scroll-margin-top: 120px;
-    padding: clamp(14px, 2vw, 22px);
+    padding: 0
+    /*padding: clamp(14px, 2vw, 22px);*/
     background: #f0f0f0;
     border-radius: 6px;
+    overflow: hidden;
 }
 
 /* Pink expandable heading */
@@ -1485,7 +1487,8 @@ a:focus-visible {
 
     background: #e22450;
     color: #fffcf7;
-    border-radius: 4px;
+    border-radius: 0;
+    /*border-radius: 4px;*/
 
     cursor: pointer;
     list-style: none;
@@ -1542,7 +1545,9 @@ a:focus-visible {
 /* Content beneath the expandable heading */
 
 .resource-section-content {
-    margin-top: 16px;
+    /*margin-top: 16px;*/
+    margin-top: 0;
+    padding: clamp(14px, 2vw, 22px);
 }
 
 .resource-section-content > p {
