@@ -1469,7 +1469,7 @@ a:focus-visible {
     display: block;
     min-width: 0;
     scroll-margin-top: 120px;
-    padding: 0
+    padding: 0;
     /*padding: clamp(14px, 2vw, 22px);*/
     background: #f0f0f0;
     border-radius: 6px;
