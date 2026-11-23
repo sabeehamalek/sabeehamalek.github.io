@@ -1545,15 +1545,95 @@ a:focus-visible {
 /* Content beneath the expandable heading */
 
 .resource-section-content {
-    /*margin-top: 16px;*/
+    --resource-content-padding: clamp(14px, 2vw, 22px);
+    --resource-card-indent: clamp(10px, 1.5vw, 20px);
+    --resource-card-heading-inset: 16px;
+
+    position: relative;
     margin-top: 0;
-    padding: clamp(14px, 2vw, 22px);
+    padding: var(--resource-content-padding);
 }
+
+/* Align descriptive text with condition heading text */
 
 .resource-section-content > p {
     max-width: 1000px;
-    margin: 0 0 12px;
+    margin: 0 0 12px
+        calc(var(--resource-card-indent) + var(--resource-card-heading-inset));
     font-size: 0.9rem;
+}
+
+/* ===== MINIMISE SECTION CONTROL ===== */
+
+.resource-section-footer {
+    margin: 18px 0 0
+        calc(var(--resource-card-indent) + var(--resource-card-heading-inset));
+}
+
+/* Minimise button */
+
+.resource-minimise-button {
+    position: relative;
+    display: inline-block;
+
+    padding: 4px 0;
+    border: none;
+    background: transparent;
+
+    color: #e22450;
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.6;
+
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Horizontal connector joining the vertical line to the text */
+
+.resource-minimise-button::before {
+    content: "";
+    position: absolute;
+
+    top: 50%;
+    right: 100%;
+
+    width: calc(var(--resource-card-indent) + var(--resource-card-heading-inset));
+    border-top: 3px solid #e22450;
+
+    transform: translateY(-50%);
+}
+
+/* Hover effect */
+
+.resource-minimise-button:hover {
+    color: #bd1b40;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Keyboard focus */
+
+.resource-minimise-button:focus-visible {
+    outline: 2px solid #e22450;
+    outline-offset: 4px;
+}
+/* Vertical pink accent line running through the section */
+
+.resource-section-content::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    bottom: calc(var(--resource-content-padding) + 0.9rem);
+    left: var(--resource-content-padding);
+
+    width: 3px;
+    background: #e22450;
+    border-radius: 3px;
+
+    pointer-events: none;
 }
 
 /* Placeholder text */
@@ -1571,8 +1651,6 @@ a:focus-visible {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 14px;
-
-    --resource-card-indent: clamp(10px, 1.5vw, 20px);
 
     width: calc(100% - var(--resource-card-indent));
     margin: 20px 0 0 var(--resource-card-indent);
@@ -1648,6 +1726,9 @@ a:focus-visible {
         padding: 14px;
     }
 
+    .resource-section-content {
+    --resource-card-heading-inset: 14px;
+    }
 }
 
 /* ===== HELPLINES AND SUPPORT SERVICES ===== */
